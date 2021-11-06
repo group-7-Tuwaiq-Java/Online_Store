@@ -1,0 +1,19 @@
+.page{
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.cardPr{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  margin: 4rem;
+}
+
+.imgSize{
+  width: 8rem;
+  height: 8rem;
+}
