@@ -1,7 +1,7 @@
 import './App.css';
 import { useDispatch,useSelector } from "react-redux";
 import store from './components/reducers/store';
-
+import Home from './components/Home';
 
 function App() {
 
@@ -14,7 +14,9 @@ function App() {
 
   return (
     <>
+    <Home/>
     <div className="page">
+      
     <div className="cardPr">
 
      
