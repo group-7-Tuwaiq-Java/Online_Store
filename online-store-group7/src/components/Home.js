@@ -7,17 +7,17 @@ function Home() {
           product: state.ProductsReducer.products,
         }
       })
+    const state2 = useSelector((state)=>{
+        return {
+          wishList: state.wishListReducer.wishList,
+        }
+    })
     //to display 4 product in home page
     let arr=[]
     for (let i = 0; i < 4; i++) {
         arr[i]=state.product[i]
     }
-    const addToWishList=()=>{
-    //     console.log("inside on click");
-    //     console.log(state.product);
-    // const action = AddToList(state.product);
-    // dispatch(action);
-    }
+    console.log(state2.wishList);
     return (
         <div>
             <h2 className="header">Products</h2>
@@ -28,8 +28,11 @@ function Home() {
                     <img src={e.imgPr} className="imgSize"/>
                     <p className="Name">{e.namePr}</p>
                     <p className="barnd">{e.brandPr}</p>
-                    <p className="price">{e.pricePr}RS</p>
-                    <button className="addToWishList" onClick={addToWishList}>Add to Wish List</button>
+                    <p className="price">{e.pricePr}SR</p>
+                    <button className="addToWishList" onClick={()=>{
+                        const action = AddToList(e);
+                        dispatch(action);
+                    }}>Add to Wish List</button>
                     <button className="addToCart">Add to cart</button>
                  </div>
             )

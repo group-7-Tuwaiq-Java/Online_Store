@@ -6,7 +6,7 @@ const wishListReducer = (state = initialState,{type,payload})=>{
     switch (type){
         case "ADD_TO_LIST":
         return {
-        wishList: payload,
+            wishList: [...state.wishList, payload],
       };
         default:
             return state;
