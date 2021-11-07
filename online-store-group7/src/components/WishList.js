@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
+import "../styleFiles/wishList.css"
 function WishList() {
     const state = useSelector((state)=>{
         return {

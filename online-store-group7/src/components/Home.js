@@ -10,6 +10,7 @@ import spatula from "../Images/spatula.png"
 import toys from "../Images/toys.png"
 import videoGame from "../Images/videoGame.png"
 import {  useNavigate } from "react-router-dom";
+import '../styleFiles/home.css'
 
 function Home() {
 
