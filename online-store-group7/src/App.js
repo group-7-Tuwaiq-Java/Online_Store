@@ -1,11 +1,12 @@
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { useDispatch,useSelector } from "react-redux";
 import store from './components/reducers/store';
 import Home from './components/Home';
 import NavBar from './components/NavBar';
+import SignIn from './components/SignIn';
 import { BrowserRouter,Routes,Route,Link, Switch } from 'react-router-dom';
 import WishList from './components/WishList';
-import SignIn from './components/SignIn';
 import Product from './components/Product';
 import ProductsList from './components/ProductsList';
 
@@ -23,16 +24,17 @@ function App() {
   return (
     <>
     <div className="page">
-
-     
     <NavBar/>
+    <Home/>
+   
+    <div className="cardPr">
+        {state.product.map(e=>{
 
     <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/wishList" element={<WishList/>} />
           <Route path="/signIn" element={<SignIn />} />
-          <Route path="/products" element={<ProductsList/>} />
-          
+          <Route path="/products" element={<ProductsList/>} />          
         </Routes>
     </div>
     </>
