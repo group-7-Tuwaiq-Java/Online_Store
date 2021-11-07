@@ -1,0 +1,10 @@
+.formSignIn{
+    margin-top: 100px;
+    color: gray;
+    text-align: center;
+    width: 400px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+  }

@@ -1,4 +1,4 @@
-
+import "../styleFiles/navBar.css"
 import { Link } from "react-router-dom";
 import cart from '../Images/cart.png'
 
