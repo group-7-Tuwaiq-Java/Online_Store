@@ -152,3 +152,12 @@ img{
   gap: 20px;
   padding: 20px;
 }
+
+.addToWishList{
+  width: 10rem;
+  margin: 1rem;
+}
+
+.addToCart{
+  width: 10rem;
+}
