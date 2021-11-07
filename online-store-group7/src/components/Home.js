@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { AddToList } from "./reducers/wishListReducer";
+import WishList from "./WishList";
 function Home() {
     const dispatch = useDispatch();
     const state = useSelector((state)=>{
@@ -39,6 +40,7 @@ function Home() {
             })}
             </div>
             <button className="center">Show all products</button>
+            <WishList/>
         </div>
     );
 }

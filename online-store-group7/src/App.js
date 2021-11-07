@@ -5,6 +5,7 @@ import Home from './components/Home';
 import NavBar from './components/NavBar';
 
 
+
 function App() {
 
   const state = useSelector((state)=>{
@@ -34,7 +35,6 @@ function App() {
           </div>
           )
         })}
-      
 
     </div>
     </div>
