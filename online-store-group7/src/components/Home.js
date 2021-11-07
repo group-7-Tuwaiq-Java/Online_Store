@@ -1,8 +1,8 @@
-import Product from "./Product";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { AddToList } from "./reducers/wishListReducer";
 function Home() {
+    const dispatch = useDispatch();
     const state = useSelector((state)=>{
-        console.log(state);
         return {
           product: state.ProductsReducer.products,
         }
@@ -12,8 +12,12 @@ function Home() {
     for (let i = 0; i < 4; i++) {
         arr[i]=state.product[i]
     }
-
-
+    const addToWishList=()=>{
+    //     console.log("inside on click");
+    //     console.log(state.product);
+    // const action = AddToList(state.product);
+    // dispatch(action);
+    }
     return (
         <div>
             <h2 className="header">Products</h2>
@@ -25,7 +29,7 @@ function Home() {
                     <p className="Name">{e.namePr}</p>
                     <p className="barnd">{e.brandPr}</p>
                     <p className="price">{e.pricePr}RS</p>
-                    <button className="addToWishList">Add to Wish List</button>
+                    <button className="addToWishList" onClick={addToWishList}>Add to Wish List</button>
                     <button className="addToCart">Add to cart</button>
                  </div>
             )
