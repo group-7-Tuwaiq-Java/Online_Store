@@ -7,6 +7,7 @@ import NavBar from './components/NavBar';
 import SignIn from './components/SignIn';
 import { Route, Routes } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
+import SignUp from './components/SignUp';
 
 function App() {
 
@@ -21,7 +22,7 @@ function App() {
     <>
     <div className="page">
     <NavBar/>
-    <SignIn/>
+    
     <Home/>
    
     <div className="cardPr">
