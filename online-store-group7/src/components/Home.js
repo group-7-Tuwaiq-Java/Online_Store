@@ -1,5 +1,13 @@
 import { useDispatch, useSelector } from "react-redux";
 import { AddToList } from "./reducers/wishListReducer";
+import electronicDevice from "../Images/electronicDevice.png"
+import Fashion from "../Images/Fashion.png"
+import furnitures from "../Images/furnitures.png"
+import hiking from "../Images/hiking.png"
+import shoes from "../Images/shoes.png"
+import spatula from "../Images/spatula.png"
+import toys from "../Images/toys.png"
+import videoGame from "../Images/videoGame.png"
 function Home() {
     const dispatch = useDispatch();
     const state = useSelector((state)=>{
@@ -23,14 +31,14 @@ function Home() {
 
             <h2>Shop by Catogray:</h2>
             <div className="HomeCatogray">
-            <img src="electronic-device.png"/>
-            <img src="video-game.png"/>
-            <img src="shoes.png"/>
-            <img src="spatula.png"/>       
-            <img src="furnitures.png"/>
-            <img src="hiking.png"/>
-            <img src="Fashion.png"/>
-            <img src="toys.png"/>
+            <img src={electronicDevice}/>
+            <img src={videoGame}/>
+            <img src={shoes}/>
+            <img src={spatula}/>       
+            <img src={furnitures}/>
+            <img src={hiking}/>
+            <img src={Fashion}/>
+            <img src={toys}/>
             <p>Electronics</p>
             <p>Video Games</p>
             <p>Shoes</p>
