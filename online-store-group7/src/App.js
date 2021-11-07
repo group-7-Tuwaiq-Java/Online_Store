@@ -2,6 +2,8 @@ import './App.css';
 import { useDispatch,useSelector } from "react-redux";
 import store from './components/reducers/store';
 import Home from './components/Home';
+import NavBar from './components/NavBar';
+
 
 function App() {
 
@@ -14,9 +16,14 @@ function App() {
 
   return (
     <>
+     <div className="gridNav">
+      <div>
+    <NavBar/>
+    </div>
+    </div>
+ <div className="page">
     <Home/>
-    <div className="page">
-      
+   
     <div className="cardPr">
 
      
