@@ -17,12 +17,9 @@ function App() {
   return (
     <>
     <div className="page">
-     <div className="gridNav">
-      <div>
+     
     <NavBar/>
-    </div>
-    </div>
- 
+    
     <Home/>
    
     <div className="cardPr">
