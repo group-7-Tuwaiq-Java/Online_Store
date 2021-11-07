@@ -1,4 +1,11 @@
+import { useSelector } from "react-redux";
+
 function ProductsList() {
+    const state = useSelector((state)=>{
+        return {
+          product: state.ProductsReducer.products,
+        }
+      })
 
     return (
         <div>

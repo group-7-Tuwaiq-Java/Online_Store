@@ -9,8 +9,11 @@ import shoes from "../Images/shoes.png"
 import spatula from "../Images/spatula.png"
 import toys from "../Images/toys.png"
 import videoGame from "../Images/videoGame.png"
+import {  useNavigate } from "react-router-dom";
 
 function Home() {
+
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const state = useSelector((state)=>{
         return {
@@ -69,7 +72,7 @@ function Home() {
             )
             })}
             </div>
-            <button className="center">Show all products</button>
+            <button className="center" onClick={()=>{navigate("/products")}}>show all products</button>
             <WishList/>
         </div>
     );

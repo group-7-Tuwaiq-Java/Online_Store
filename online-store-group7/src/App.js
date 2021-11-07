@@ -6,6 +6,8 @@ import NavBar from './components/NavBar';
 import { BrowserRouter,Routes,Route,Link, Switch } from 'react-router-dom';
 import WishList from './components/WishList';
 import SignIn from './components/SignIn';
+import Product from './components/Product';
+import ProductsList from './components/ProductsList';
 
 
 
@@ -29,6 +31,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/wishList" element={<WishList/>} />
           <Route path="/signIn" element={<SignIn />} />
+          <Route path="/products" element={<ProductsList/>} />
+          
         </Routes>
     </div>
     </>
