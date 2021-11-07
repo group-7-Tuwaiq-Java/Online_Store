@@ -1,4 +1,5 @@
 import cart from '../Images/cart.png'
+import { Link } from "react-router-dom"
 
 function NavBar (){
 
@@ -6,11 +7,11 @@ function NavBar (){
     <div className="links">
     <ul className="listU">
     {/* <BrowserRouter> */}
-       <li className="listl listlA" >Home </li>
-       <li className="listl listlA" >Wish Item</li>
-       <li className="listR listlA " > <img src={cart} className="imgCart"/></li>
-       <li className="listR listlA ">Sign in</li>
-       <li className="listR listlA ">Search</li>
+       <li className="listl " ><Link to="/" className="listlA"> Home</Link> </li>
+       <li className="listl" ><Link to="/wishList" className="listlA">Wish Item</Link></li>
+       <li className="listR" ><Link to="/cart" className="listlA"> <img src={cart} className="imgCart"/></Link></li>
+       <li className="listR"> <Link to="/signIn" className="listlA">Sign in </Link></li>
+       <li className="listR listlA">Search</li>
        <li className="listR listlA" ><input type="text"  className="textNav"/></li>
 
 
