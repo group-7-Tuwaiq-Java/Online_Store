@@ -24,7 +24,7 @@ function Home() {
                     <img src={e.imgPr} className="imgSize"/>
                     <p className="Name">{e.namePr}</p>
                     <p className="barnd">{e.brandPr}</p>
-                    <p className="price">{e.pricePr}RS</p>
+                    <p className="price">{e.pricePr}SR</p>
                     <button className="addToWishList">Add to Wish List</button>
                     <button className="addToCart">Add to cart</button>
                  </div>

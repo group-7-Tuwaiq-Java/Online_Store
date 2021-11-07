@@ -16,12 +16,13 @@ function App() {
 
   return (
     <>
+    <div className="page">
      <div className="gridNav">
       <div>
     <NavBar/>
     </div>
     </div>
- <div className="page">
+ 
     <Home/>
    
     <div className="cardPr">
