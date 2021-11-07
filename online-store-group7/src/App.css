@@ -121,3 +121,12 @@ img{
   width: 2rem;
   height: 2rem;
 }
+Form,button{
+  margin-top: 100px;
+  color: gray;
+  text-align: center;
+  width: 400px;
+  display: block;
+  justify-content: center;
+  
+}
