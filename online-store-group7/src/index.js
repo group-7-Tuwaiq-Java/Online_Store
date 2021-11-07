@@ -12,9 +12,8 @@ import { BrowserRouter, Route } from "react-router-dom";
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-  <App/>
       <BrowserRouter>
-    <App />
+        <App />
     </BrowserRouter>
     </Provider>
   </React.StrictMode>,

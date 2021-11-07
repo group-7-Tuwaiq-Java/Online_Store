@@ -1,8 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { BrowserRouter } from "react-router-dom";
 import cart from '../Images/cart.png'
-import { Link } from "react-router-dom"
 
 function NavBar (){
 
