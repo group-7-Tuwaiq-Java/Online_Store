@@ -21,7 +21,12 @@
   display: grid;
   grid-template-columns: 1fr 1fr  1fr 1fr  1fr 1fr  1fr 1fr;
   gap: 5px;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  align-content: center;
   text-align: center;
+
   background-color: aliceblue;
  
 }
@@ -121,6 +126,7 @@ img{
   width: 2rem;
   height: 2rem;
 }
+
 Form,button{
   margin-top: 100px;
   color: gray;
@@ -128,5 +134,16 @@ Form,button{
   width: 400px;
   display: block;
   justify-content: center;
-  
+}
+
+/* Wish List page */
+.wishList{
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(223, 224, 224);
+
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
 }

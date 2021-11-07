@@ -1,7 +1,28 @@
+import { useSelector } from "react-redux";
+
 function ProductsList() {
+    const state = useSelector((state)=>{
+        return {
+          product: state.ProductsReducer.products,
+        }
+      })
 
     return (
-        <div></div>
+        <div>
+            <div className="cardPr">
+
+{state.product.map(e=>{
+  
+  return(
+  <div>
+  <img src={e.imgPr} className="imgSize"/>
+  <p>{e.namePr}</p>
+  </div>
+  )
+})}
+
+</div>
+        </div>
     );
 }
   
