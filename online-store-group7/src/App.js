@@ -17,6 +17,7 @@ function App() {
   return (
     <>
     <div className="page">
+
      
     <NavBar/>
     
@@ -24,11 +25,12 @@ function App() {
    
     <div className="cardPr">
 
+    
      
         {state.product.map(e=>{
           
           return(
-            <div>
+          <div>
           <img src={e.imgPr} className="imgSize"/>
           <p>{e.namePr}</p>
           </div>
