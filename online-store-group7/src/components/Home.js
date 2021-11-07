@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { AddToList } from "./reducers/wishListReducer";
+import WishList from "./WishList";
 import electronicDevice from "../Images/electronicDevice.png"
 import Fashion from "../Images/Fashion.png"
 import furnitures from "../Images/furnitures.png"
@@ -8,6 +9,7 @@ import shoes from "../Images/shoes.png"
 import spatula from "../Images/spatula.png"
 import toys from "../Images/toys.png"
 import videoGame from "../Images/videoGame.png"
+
 function Home() {
     const dispatch = useDispatch();
     const state = useSelector((state)=>{
@@ -68,6 +70,7 @@ function Home() {
             })}
             </div>
             <button className="center">Show all products</button>
+            <WishList/>
         </div>
     );
 }
