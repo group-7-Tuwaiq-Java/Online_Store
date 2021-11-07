@@ -7,6 +7,7 @@ function WishList() {
     })
     console.log("in wishlist");
     return (
+        
         <div>
             {state.wishList.map(e=>{
                 console.log("in map");
