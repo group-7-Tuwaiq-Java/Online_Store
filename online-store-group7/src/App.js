@@ -25,17 +25,17 @@ function App() {
     <>
     <div className="page">
     <NavBar/>
-    <Home/>
-   
-    <div className="cardPr">
-        {state.product.map(e=>{
 
+      
     <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/wishList" element={<WishList/>} />
           <Route path="/signIn" element={<SignIn />} />
           <Route path="/products" element={<ProductsList/>} />          
         </Routes>
+        
+    
+    
     </div>
     </>
   );

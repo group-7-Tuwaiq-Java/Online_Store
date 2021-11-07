@@ -1,10 +1,12 @@
 import { Form , Button} from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
 function SignIn() {
 
     return (
-        <div>
-<Form>
-  <Form.Group className="mb-3" controlId="formBasicEmail">
+
+        <>
+<Form className="formSignIn">
+  <Form.Group className="mb-3 " controlId="formBasicEmail">
     <Form.Label>Username</Form.Label>
     <Form.Control type="text" placeholder="Enter username" />
   </Form.Group>
@@ -20,7 +22,7 @@ function SignIn() {
     Sign Up 
   </Button>
   </Form>
-        </div>
+</>
     );
 }
   
