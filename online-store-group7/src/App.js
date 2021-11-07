@@ -26,7 +26,7 @@ function App() {
     <NavBar/>
 
     <Routes>
-          <Route exact path="/" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/wishList" element={<WishList/>} />
           <Route path="/signIn" element={<SignIn />} />
         </Routes>
