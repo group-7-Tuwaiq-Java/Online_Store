@@ -1,6 +1,7 @@
 import './App.css';
 import { useDispatch,useSelector } from "react-redux";
 import store from './components/reducers/store';
+import Home from './components/Home';
 
 
 function App() {
@@ -15,13 +16,15 @@ function App() {
   return (
     <>
     <div className="page">
+       <Home/>
     <div className="cardPr">
 
+    
      
         {state.product.map(e=>{
           
           return(
-            <div>
+          <div>
           <img src={e.imgPr} className="imgSize"/>
           <p>{e.namePr}</p>
           </div>
