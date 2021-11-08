@@ -1,35 +1,41 @@
 import { useSelector,useDispatch } from "react-redux";
 import { Products } from "./objectsOfProducts";
-import {increment,decrement} from "./reducers/CartReducer"
+import {increment,decrement} from "./reducers/CartCounterReducer"
 import {Form,Button} from "react-bootstrap";
 import "../styleFiles/Cart.css"
+import { useState } from "react";
+
 function Cart() {
+  
 const state=useSelector((state)=>{
     return{
         cart:state.CartReducer.cart,
     }
 })
  
-const counter=useSelector((state)=>state.counter)
-
+const counter = useSelector((state) =>{
+return{
+  counter:state.CartCounterReducer
+}})
 const dispatch=useDispatch();
-alert("Added to cart");
+
+
 return (       
         <div>
           <>
            <h2>Cart</h2>
            {state.cart.map(e=>{
-             console.log("somthing")
              return(
-               <div className="Cart">
-            <img src={e.imgPr} className="cartImg"/>
+            <div className="Cart">
+            <img src={e.imgPr}/>
             <p>{e.namePr}</p>
             <p>{e.pricePr}SR</p>
-            {/* <button onClick={() => dispatch(increment())}>+</button>
-            <p>{counter}</p>
-            <button onClick={() => dispatch(decrement())}>-</button> */}
+            <button onClick={() => dispatch(increment())}>+</button>
+            <p>{counter.counter}</p>
+            <button onClick={() => dispatch(decrement())}>-</button>
             </div>
-             )
+           
+           )
            })}
             </>
            <hr></hr>
@@ -71,6 +77,7 @@ return (
 </>
         </div>
     );
+    
 }
   
 export default Cart;

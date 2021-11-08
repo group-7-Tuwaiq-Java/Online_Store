@@ -1,10 +1,10 @@
 import product from "../styleFiles/product.css"
 import { useDispatch, useSelector } from "react-redux";
 import { AddToList } from "./reducers/wishListReducer";
+
 import { useNavigate } from 'react-router-dom';
 
 import { AddToCart } from "./reducers/CartReducer";
-
 import  "../styleFiles/product.css"
 
 function Product({products}) {
@@ -19,11 +19,11 @@ function Product({products}) {
                     <p className="Name">{e.namePr}</p>
                     <p className="barnd">{e.brandPr}</p>
                     <p className="price">{e.pricePr}SR</p>
-                    <button className="addToWishList" onClick={(e)=>{
+                    <button className="addToWishList" onClick={()=>{
                         const action = AddToList(e);
                         dispatch(action);
                     }}>Add to Wish List</button>
-                    <button className="addToCart"  onClick={(e)=>{
+                    <button className="addToCart"  onClick={()=>{
                         const action =AddToCart(e);
                         dispatch(action);
                     }}>Add to cart</button>
