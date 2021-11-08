@@ -1,7 +1,5 @@
 import product from "../styleFiles/product.css"
 import { useDispatch, useSelector } from "react-redux";
-import { AddToList } from "./reducers/wishListReducer";
-
 import { useNavigate } from 'react-router-dom';
 
 import { AddToCart } from "./reducers/CartReducer";
@@ -19,11 +17,8 @@ function Product({products}) {
                     <p className="Name">{e.namePr}</p>
                     <p className="barnd">{e.brandPr}</p>
                     <p className="price">{e.pricePr}SR</p>
-                    <button className="addToWishList" onClick={()=>{
-                        const action = AddToList(e);
-                        dispatch(action);
-                    }}>Add to Wish List</button>
-                    <button className="addToCart"  onClick={()=>{
+                    <button className="addToWishList" onClick={(e)=>{ }}>Add to Wish List</button>
+                    <button className="addToCart"  onClick={(e)=>{
                         const action =AddToCart(e);
                         dispatch(action);
                     }}>Add to cart</button>

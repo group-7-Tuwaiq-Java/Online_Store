@@ -18,8 +18,12 @@ function SignUp() {
  const newUserObj={
     userName:userName,
     password:password,
-    email:email
+    email:email,
+    whishList:[],
+    cart:[],
+    orderHis:[]
   }
+  console.log(state.users);
 
   const dispatch = useDispatch()
   function AddNewUser(){
