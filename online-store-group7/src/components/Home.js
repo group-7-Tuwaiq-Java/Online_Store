@@ -78,7 +78,6 @@ function Home() {
             })}
             </div>
             <button className="center" onClick={()=>{navigate("/products")}}>show all products</button>
-            <WishList/>
         </div>
     );
 }

@@ -1,4 +1,4 @@
-import { Products } from "../objectsOfProducts";
+import { Products } from "../../objectsOfProducts";
 
 const initialState ={
     products:Products,
