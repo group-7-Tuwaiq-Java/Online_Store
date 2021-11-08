@@ -12,3 +12,24 @@
     width: 8rem;
     height: 8rem;
   }
+
+  nav{
+    display: flex;
+    justify-content: center;
+  }
+
+  .Product{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    /* width: 200px; */
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+    background-color: rgb(223, 224, 224);
+  }
+
+  
