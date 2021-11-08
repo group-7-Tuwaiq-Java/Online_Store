@@ -14,9 +14,8 @@ function Product({products}) {
         <div className="Product">
             {products.map((e,i)=>{
             return(
-                <div className="productItem">
-                    <img src={e.imgPr} className="imgSize"
-                    onClick={() => {navigate(`/productDetails/${e.idPr}`)}}/>
+                <div className="productItem" onClick={() => {navigate(`/productDetails/${e.idPr}`)}}>
+                    <img src={e.imgPr} className="imgSize"/>
                     <p className="Name">{e.namePr}</p>
                     <p className="barnd">{e.brandPr}</p>
                     <p className="price">{e.pricePr}SR</p>
