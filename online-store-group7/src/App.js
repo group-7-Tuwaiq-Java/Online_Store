@@ -12,6 +12,7 @@ import ProductsList from './components/ProductsList';
 import SignUp from './components/SignUp';
 import ProductDetails from './components/ProductDetails';
 import Cart from './components/Cart';
+import Footer from './components/footer';
 
 
 function App() {
@@ -39,7 +40,10 @@ function App() {
           <Route path="/productDetails/:id" element={<ProductDetails/>} />         
           <Route path="/Cart" element={<Cart/>} />  
         </Routes>
-    
+
+        
+    <Footer/>
+
     </div>
     </>
   );
