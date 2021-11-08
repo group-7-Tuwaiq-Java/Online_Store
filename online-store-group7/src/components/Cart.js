@@ -9,29 +9,29 @@ const state=useSelector((state)=>{
         cart:state.CartReducer.cart,
     }
 })
- alert("Added to cart");
+ 
 const counter=useSelector((state)=>state.counter)
 
 const dispatch=useDispatch();
-
+alert("Added to cart");
 return (       
         <div>
-          <div className="Cart">
+          <>
            <h2>Cart</h2>
            {state.cart.map(e=>{
              console.log("somthing")
              return(
-               <>
+               <div className="Cart">
             <img src={e.imgPr} className="cartImg"/>
             <p>{e.namePr}</p>
             <p>{e.pricePr}SR</p>
             {/* <button onClick={() => dispatch(increment())}>+</button>
             <p>{counter}</p>
             <button onClick={() => dispatch(decrement())}>-</button> */}
-            </>
+            </div>
              )
            })}
-           </div> 
+            </>
            <hr></hr>
             
 {/* order details */}
@@ -74,7 +74,3 @@ return (
 }
   
 export default Cart;
-//اعرف الكاونتر done
-//اعرف الماكس واعطيه عدد القطعه
-//ب اون كليك للبوتون + احط اف ستيتمنت تشيك اذا الكوانتيتي للقطعه اكبر من الكاونتر 
-//ب اون كليك للبوتون - اخليه يشيك انه مايقل الكاونتر عن صفر

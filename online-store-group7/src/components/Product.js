@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { AddToList } from "./reducers/wishListReducer";
 import product from "../styleFiles/product.css"
+import { AddToCart } from "./reducers/CartReducer";
 function Product({products}) {
     const dispatch = useDispatch();
     return (
@@ -16,7 +17,10 @@ function Product({products}) {
                         const action = AddToList(e);
                         dispatch(action);
                     }}>Add to Wish List</button>
-                    <button className="addToCart">Add to cart</button>
+                    <button className="addToCart"  onClick={()=>{
+                        const action =AddToCart(e);
+                        dispatch(action);
+                    }}>Add to cart</button>
                  </div>
             )
             })}
