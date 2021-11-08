@@ -11,8 +11,6 @@ import videoGame from "../Images/videoGame.png"
 import {  useNavigate } from "react-router-dom";
 import '../styleFiles/home.css'
 
-import { AddToCart } from "./reducers/CartReducer";
-
 import Product from "./Product";
 
 
@@ -70,10 +68,7 @@ function Home() {
                     <p className="barnd">{e.brandPr}</p>
                     <p className="price">{e.pricePr}SR</p>
                     <button className="addToWishList" onClick={()=>{ }}>Add to Wish List</button>
-                    <button className="addToCart" onClick={()=>{
-                        const action =AddToCart(e);
-                        dispatch(action);
-                    }}>Add to cart</button>
+                    <button className="addToCart" onClick={()=>{}}>Add to cart</button>
                  </div>
             )
             })}
