@@ -28,22 +28,20 @@ function App() {
     <>
     <div className="page">
     <NavBar/>
-
+       
       
-    <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/wishList" element={<WishList/>} />
-          <Route path="/signIn" element={<SignIn />} />
-          <Route path="/products" element={<ProductsList/>} /> 
-
-          <Route path="/SignUp" element={<SignUp/>} />
-          <Route path="/productDetails/:id" element={<ProductDetails/>} />         
-          <Route path="/Cart" element={<Cart/>} />  
-        </Routes>
-
-        
-    <Footer/>
-
+          <Routes>
+                <Route path="/" element={<Home />} />
+                {/* <Route path="/wishList" element={<WishList/>} /> */}
+                <Route path="/signIn" element={<SignIn />} />
+                <Route path="/products" element={<ProductsList/>} /> 
+                <Route path="/SignUp" element={<SignUp/>} />
+                <Route path="/productDetails/:id" element={<ProductDetails/>} />         
+                <Route path="/Cart" element={<Cart/>} />  
+              </Routes>
+    <div className="footerGrid">
+          <Footer/>
+    </div>
     </div>
     </>
   );

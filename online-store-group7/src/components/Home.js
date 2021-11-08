@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from "react-redux";
-import { AddToList } from "./reducers/wishListReducer";
 import WishList from "./WishList";
 import electronicDevice from "../Images/electronicDevice.png"
 import Fashion from "../Images/Fashion.png"
@@ -22,17 +21,17 @@ function Home() {
           product: state.ProductsReducer.products,
         }
       })
-    const state2 = useSelector((state)=>{
-        return {
-          wishList: state.wishListReducer.wishList,
-        }
-    })
+    // const state2 = useSelector((state)=>{
+    //     return {
+    //       wishList: state.wishListReducer.wishList,
+    //     }
+    // })
     //to display 4 product in home page
     let arr=[]
     for (let i = 0; i < 4; i++) {
         arr[i]=state.product[i]
     }
-    console.log(state2.wishList);
+    // console.log(state2.wishList);
     return (
         <div>
 

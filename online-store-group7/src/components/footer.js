@@ -6,7 +6,7 @@ function Footer(){
 return(
         <footer>
             <div className="gridfooter">
-                <p className="ppp"><Link to="/" className="ppp">Author: Hege Refsnes</Link></p>
+                <p className="ppp">Author: Hege Refsnes</p>
                 <p className="ppp2">Author: Hege Refsnes</p>
                 </div>
         </footer>

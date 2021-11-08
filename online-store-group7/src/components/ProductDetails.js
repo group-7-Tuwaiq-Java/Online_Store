@@ -1,6 +1,5 @@
 import productDetails from "../styleFiles/productDetails.css"
 import { useDispatch, useSelector } from "react-redux";
-import { AddToList } from "./reducers/wishListReducer";
 import { useParams } from "react-router";
 import { useNavigate } from 'react-router-dom';
 
@@ -28,10 +27,7 @@ function ProductDetails({products}) {
                         <p className="Name">{e.namePr}</p>
                         <p className="barnd">{e.brandPr}</p>
                         <p className="price">{e.pricePr}SR</p>
-                        <button className="addToWishList" onClick={()=>{
-                            const action = AddToList(e);
-                            dispatch(action);
-                        }}>Add to Wish List</button>
+                        <button className="addToWishList" onClick={()=>{}}>Add to Wish List</button>
                         <button className="addToCart">Add to cart</button>
                     </div>
                  <div className="description">
