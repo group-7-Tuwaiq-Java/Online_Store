@@ -1,0 +1,21 @@
+.CartForm{
+    justify-content: center;
+    justify-self: center;
+    align-items: center;
+    display: block;
+    color: gray;
+    width: 400px;
+}
+button{
+    width: 150px;
+    margin-top: 10px;
+}
+.cart{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(223, 224, 224);
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}

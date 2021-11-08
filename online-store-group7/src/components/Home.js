@@ -11,6 +11,10 @@ import shoes from "../Images/shoes.png"
 import spatula from "../Images/spatula.png"
 import toys from "../Images/toys.png"
 import videoGame from "../Images/videoGame.png"
+import {  useNavigate } from "react-router-dom";
+import '../styleFiles/home.css'
+import { AddToCart } from "./reducers/CartReducer";
+
 
 function Home() {
 
@@ -49,6 +53,24 @@ function Home() {
        </div>
             <h2 className="header">Products</h2>
             <div className="Products">
+            {arr.map((e,i)=>{
+            return(
+                <div className="productItem">
+                    <img src={e.imgPr} className="imgSize"/>
+                    <p className="Name">{e.namePr}</p>
+                    <p className="barnd">{e.brandPr}</p>
+                    <p className="price">{e.pricePr}SR</p>
+                    <button className="addToWishList" onClick={()=>{
+                        const action = AddToList(e);
+                        dispatch(action);
+                    }}>Add to Wish List</button>
+                    <button className="addToCart" onClick={()=>{
+                        const action =AddToCart(e);
+                        dispatch(action);
+                    }}>Add to cart</button>
+                 </div>
+            )
+            })}
             <Product products={arr}/>
             </div>
             <button className="center" onClick={()=>{navigate("/products")}}>show all products</button>
