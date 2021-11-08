@@ -10,7 +10,9 @@ import WishList from './components/WishList';
 import Product from './components/Product';
 import ProductsList from './components/ProductsList';
 import SignUp from './components/SignUp';
+import ProductDetails from './components/ProductDetails';
 import Cart from './components/Cart';
+import Footer from './components/footer';
 
 
 function App() {
@@ -33,11 +35,15 @@ function App() {
           <Route path="/wishList" element={<WishList/>} />
           <Route path="/signIn" element={<SignIn />} />
           <Route path="/products" element={<ProductsList/>} /> 
-          <Route path="/SignUp" element={<SignUp/>} />  
+
+          <Route path="/SignUp" element={<SignUp/>} />
+          <Route path="/productDetails/:id" element={<ProductDetails/>} />         
           <Route path="/Cart" element={<Cart/>} />  
         </Routes>
+
         
-    
+    <Footer/>
+
     </div>
     </>
   );

@@ -7,6 +7,7 @@ import UserReducer from "./user/userReducer"
 
 const reducers = combineReducers({ProductsReducer, wishListReducer,CartReducer,UserReducer,CartCounterReducer})
 
+
 const store = createStore(reducers)
 
 export default store

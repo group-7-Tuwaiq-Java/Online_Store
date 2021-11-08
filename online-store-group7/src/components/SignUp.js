@@ -23,6 +23,7 @@ function SignUp() {
 
   const dispatch = useDispatch()
   function AddNewUser(){
+
     const checkIfExist = state.users.filter((e) =>newUserObj.userName === e.userName || newUserObj.email === e.email)
     if (checkIfExist.length>0){
       console.log(state.users);
@@ -48,6 +49,7 @@ function SignUp() {
 
   </Form.Group>
   <Form.Group className="mb-3 " controlId="formBasicEmail">
+
     <Form.Label>Email</Form.Label>
     <Form.Control type="email" placeholder="Enter your Email"  onChange={(e)=>{setEmail(e.target.value)}}/>
   </Form.Group>
@@ -59,9 +61,11 @@ function SignUp() {
   <Button variant="secondary" size="lg" onClick={AddNewUser}>
     Sign Up 
 
+
   </Button>
   </Form>
         </>
+
     );
 }
   

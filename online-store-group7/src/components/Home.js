@@ -11,7 +11,12 @@ import toys from "../Images/toys.png"
 import videoGame from "../Images/videoGame.png"
 import {  useNavigate } from "react-router-dom";
 import '../styleFiles/home.css'
+
 import { AddToCart } from "./reducers/CartReducer";
+
+import Product from "./Product";
+
+
 function Home() {
 
     const navigate = useNavigate();
@@ -56,6 +61,7 @@ function Home() {
        </div>
 
             <h2 className="header">Products</h2>
+
             <div className="Products">
             {arr.map((e,i)=>{
             return(
