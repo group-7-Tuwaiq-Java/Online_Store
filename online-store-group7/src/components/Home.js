@@ -69,10 +69,7 @@ function Home() {
                     <p className="Name">{e.namePr}</p>
                     <p className="barnd">{e.brandPr}</p>
                     <p className="price">{e.pricePr}SR</p>
-                    <button className="addToWishList" onClick={()=>{
-                        const action = AddToList(e);
-                        dispatch(action);
-                    }}>Add to Wish List</button>
+                    <button className="addToWishList" onClick={()=>{ }}>Add to Wish List</button>
                     <button className="addToCart" onClick={()=>{
                         const action =AddToCart(e);
                         dispatch(action);
