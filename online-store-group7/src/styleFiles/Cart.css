@@ -1,8 +1,8 @@
 .CartForm{
+    display: block;
     justify-content: center;
     justify-self: center;
     align-items: center;
-    display: block;
     color: gray;
     width: 400px;
 }
@@ -10,7 +10,7 @@ button{
     width: 150px;
     margin-top: 10px;
 }
-.cart{
+.Cart{
     display: flex;
     flex-direction: row;
     background-color: rgb(223, 224, 224);
@@ -18,4 +18,8 @@ button{
     align-items: center;
     gap: 20px;
     padding: 20px;
+}
+h2{
+   text-align: center; 
+   color:gray;
 }

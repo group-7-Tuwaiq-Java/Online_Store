@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from 'react-router-dom';
 
 import { AddToCart } from "./reducers/CartReducer";
-
 import  "../styleFiles/product.css"
 
 function Product({products}) {
