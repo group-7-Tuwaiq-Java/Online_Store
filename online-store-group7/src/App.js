@@ -33,10 +33,10 @@ function App() {
           <Route path="/wishList" element={<WishList/>} />
           <Route path="/signIn" element={<SignIn />} />
           <Route path="/products" element={<ProductsList/>} /> 
-          <Route path="/SignUp" element={<SignUp/>} />         
+          <Route path="/SignUp" element={<SignUp/>} />  
+          <Route path="/Cart" element={<Cart/>} />  
         </Routes>
         
-        <Cart/>
     
     </div>
     </>
