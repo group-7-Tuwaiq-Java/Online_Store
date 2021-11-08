@@ -11,6 +11,7 @@ import Product from './components/Product';
 import ProductsList from './components/ProductsList';
 import SignUp from './components/SignUp';
 import Cart from './components/Cart';
+import Footer from './components/footer';
 
 
 function App() {
@@ -37,7 +38,7 @@ function App() {
           <Route path="/Cart" element={<Cart/>} />  
         </Routes>
         
-    
+    <Footer/>
     </div>
     </>
   );
