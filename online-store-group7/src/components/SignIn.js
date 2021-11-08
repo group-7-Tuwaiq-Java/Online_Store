@@ -1,6 +1,8 @@
 import { Form , Button} from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from "react-router-dom";
+import "../styleFiles/signIn.css"
+
 function SignIn() {
 const navigate=useNavigate();
     return (
