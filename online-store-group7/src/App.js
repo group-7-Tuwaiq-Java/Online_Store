@@ -5,9 +5,13 @@ import store from './components/reducers/store';
 import Home from './components/Home';
 import NavBar from './components/NavBar';
 import SignIn from './components/SignIn';
-import { Route, Routes } from 'react-router';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter,Routes,Route,Link, Switch } from 'react-router-dom';
+import WishList from './components/WishList';
+import Product from './components/Product';
+import ProductsList from './components/ProductsList';
 import SignUp from './components/SignUp';
+
+
 
 function App() {
 
@@ -22,22 +26,18 @@ function App() {
     <>
     <div className="page">
     <NavBar/>
-    
-    <Home/>
-   
-    <div className="cardPr">
-        {state.product.map(e=>{
-          
-          return(
-          <div>
-          <img src={e.imgPr} className="imgSize"/>
-          <p>{e.namePr}</p>
-          </div>
-          )
-        })}
-      
 
-    </div>
+      
+    <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/wishList" element={<WishList/>} />
+          <Route path="/signIn" element={<SignIn />} />
+          <Route path="/products" element={<ProductsList/>} /> 
+          <Route path="/SignUp" element={<SignUp/>} />         
+        </Routes>
+        
+   
+    
     </div>
     </>
   );

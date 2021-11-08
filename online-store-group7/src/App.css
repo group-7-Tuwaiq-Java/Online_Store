@@ -1,6 +1,9 @@
 .page{
   display: grid;
   grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .cardPr{
@@ -21,10 +24,15 @@
   display: grid;
   grid-template-columns: 1fr 1fr  1fr 1fr  1fr 1fr  1fr 1fr;
   gap: 5px;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  align-content: center;
   text-align: center;
   background-color: aliceblue;
  
 }
+
 img{
   justify-content: center;
    width: 80px;
@@ -95,7 +103,7 @@ img{
   color: white;
   text-align: center;
   padding: 14px 14px;
-  height: 2rem;
+  height: 4rem;
   text-decoration: none;
   font-family:'Times New Roman', Times, serif;
 
@@ -121,11 +129,25 @@ img{
   width: 2rem;
   height: 2rem;
 }
-Form,button{
+
+.formSignIn{
   margin-top: 100px;
   color: gray;
   width: 400px;
   display: block;
   justify-content: center;
-  
+  align-items: center;
+  justify-self: center;
+}
+
+/* Wish List page */
+.wishList{
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(223, 224, 224);
+
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
 }
