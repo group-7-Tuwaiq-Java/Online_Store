@@ -1,0 +1,16 @@
+.formSignIn{ 
+    display: block;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    color: gray;
+    width: 400px;
+  } 
+  h1{
+    margin-top: 100px;
+    color:gray;
+    text-align: center;
+  }
+ 
+  
+

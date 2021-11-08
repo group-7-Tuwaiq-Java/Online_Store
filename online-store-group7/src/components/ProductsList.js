@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-
+import "../styleFiles/productsList.css"
 function ProductsList() {
     const state = useSelector((state)=>{
         return {

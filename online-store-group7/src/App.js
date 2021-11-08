@@ -10,7 +10,7 @@ import WishList from './components/WishList';
 import Product from './components/Product';
 import ProductsList from './components/ProductsList';
 import SignUp from './components/SignUp';
-
+import Cart from './components/Cart';
 
 
 function App() {
@@ -36,7 +36,7 @@ function App() {
           <Route path="/SignUp" element={<SignUp/>} />         
         </Routes>
         
-   
+        <Cart/>
     
     </div>
     </>

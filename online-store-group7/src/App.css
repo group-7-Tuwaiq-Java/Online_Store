@@ -6,118 +6,8 @@
   width: 100%;
 }
 
-.cardPr{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 2rem;
-  margin: 4rem;
-}
-.imgSize{
-  width: 8rem;
-  height: 8rem;
-}
-
-.HomeCatogray{
-  display: grid;
-  grid-template-columns: 1fr 1fr  1fr 1fr  1fr 1fr  1fr 1fr;
-  gap: 5px;
-  justify-content: center;
-  align-items: center;
-  justify-items: center;
-  align-content: center;
-  text-align: center;
-  background-color: aliceblue;
- 
-}
-
-img{
-  justify-content: center;
-   width: 80px;
-  height: 80px;
-  margin-left: 30px;
-}
-
-
-/* HOME page */
-.Products{
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
-  margin: 20px;
-  padding: 20px;
-  background-color: rgb(223, 224, 224);
-}
-.productItem{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #fff;
-  width: 40%;
-  height: 400px;
-  padding-left: 5px;
-}
 .button{
   margin: 5px;
-}
-.center{
-  margin:auto;
-  display:block;
-}
-.header{
-  text-align: center;
-}
-
-.gridNav{
-  display:grid;
-  grid-template-rows: 1fr; 
-  align-content: center;
-  align-items: center;
-  align-self: center;
-  text-align: center;
-  width: 100%;
-}
-.listU {
-  list-style-type: none;
-  margin: 0;
-  margin-top: 0ch;
-  padding: 0;
-  overflow: hidden;
-  text-align: center;
-  justify-content: center;
-  justify-items: center;
-  background-color: #333;
-}
-
-.listl {
-  float: left;
-}
-
-.listlA {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 14px;
-  height: 4rem;
-  text-decoration: none;
-  font-family:'Times New Roman', Times, serif;
-
-}
-
-.listl:hover {
-  background-color: #111;
-}
-.listR:hover {
-  background-color: #111;
-}
-
-.textNav{
-  width: 20rem;
 }
 
 
@@ -129,17 +19,6 @@ img{
   width: 2rem;
   height: 2rem;
 }
-
-.formSignIn{
-  margin-top: 100px;
-  color: gray;
-  width: 400px;
-  display: block;
-  justify-content: center;
-  align-items: center;
-  justify-self: center;
-}
-
 /* Wish List page */
 .wishList{
   display: flex;
