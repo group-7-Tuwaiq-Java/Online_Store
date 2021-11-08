@@ -15,7 +15,6 @@ function SignUp() {
       users:state.UserReducer.users,
     }
   })
-
  const newUserObj={
     userName:userName,
     password:password,
