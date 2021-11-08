@@ -9,6 +9,8 @@ import { BrowserRouter,Routes,Route,Link, Switch } from 'react-router-dom';
 import WishList from './components/WishList';
 import Product from './components/Product';
 import ProductsList from './components/ProductsList';
+import SignUp from './components/SignUp';
+import ProductDetails from './components/ProductDetails';
 
 
 
@@ -31,10 +33,12 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/wishList" element={<WishList/>} />
           <Route path="/signIn" element={<SignIn />} />
-          <Route path="/products" element={<ProductsList/>} />          
+          <Route path="/products" element={<ProductsList/>} /> 
+          <Route path="/SignUp" element={<SignUp/>} />
+          <Route path="/productDetails/:id" element={<ProductDetails/>} />         
         </Routes>
         
-    
+   
     
     </div>
     </>

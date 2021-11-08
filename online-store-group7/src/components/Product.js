@@ -1,14 +1,18 @@
+import product from "../styleFiles/product.css"
 import { useDispatch, useSelector } from "react-redux";
 import { AddToList } from "./reducers/wishListReducer";
-import product from "../styleFiles/product.css"
+import { useNavigate } from 'react-router-dom';
+
 function Product({products}) {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     return (
         <div className="Product">
             {products.map((e,i)=>{
             return(
                 <div className="productItem">
-                    <img src={e.imgPr} className="imgSize"/>
+                    <img src={e.imgPr} className="imgSize"
+                    onClick={() => {navigate(`/productDetails/${e.idPr}`)}}/>
                     <p className="Name">{e.namePr}</p>
                     <p className="barnd">{e.brandPr}</p>
                     <p className="price">{e.pricePr}SR</p>

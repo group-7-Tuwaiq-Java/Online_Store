@@ -3,6 +3,7 @@ import "../styleFiles/productsList.css"
 import { useState } from "react";
 import Product from "./Product";
 import Pagination from "./Pagination";
+
 function ProductsList() {
     const state = useSelector((state)=>{
         return {

@@ -1,11 +1,14 @@
 import { Form , Button} from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useNavigate } from "react-router-dom";
 import "../styleFiles/signIn.css"
-function SignIn() {
 
+function SignIn() {
+const navigate=useNavigate();
     return (
 
         <>
+        
 <Form className="formSignIn">
   <Form.Group className="mb-3 " controlId="formBasicEmail">
     <Form.Label>Username</Form.Label>
@@ -19,7 +22,7 @@ function SignIn() {
     Sign In
   </Button>
   <p>Don't have an account?</p>
-  <Button variant="secondary" size="lg">
+  <Button variant="secondary" size="lg" onClick={()=>{navigate("/SignUp")}}>
     Sign Up 
   </Button>
   </Form>
