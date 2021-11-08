@@ -24,11 +24,19 @@ function SignUp() {
 
   const dispatch = useDispatch()
   function AddNewUser(){
-    
+    const checkIfExist = state.users.filter((e) =>newUserObj.userName === e.userName || newUserObj.email === e.email)
+    if (checkIfExist.length>0){
+      console.log(state.users);
+      alert("User Name or Email already exist ")
+    }
+    else{
+    console.log(checkIfExist);
     const action = addUser(newUserObj)
-    dispatch(action)
+    dispatch(action)  
   }
-  console.log(state.users);
+  
+}
+  // console.log(state.users);
 
     return (
        <>

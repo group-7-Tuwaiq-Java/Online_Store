@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { AddToList } from "./reducers/wishListReducer";
-import product from "../styleFiles/product.css"
+import  "../styleFiles/product.css"
 function Product({products}) {
     const dispatch = useDispatch();
     return (
