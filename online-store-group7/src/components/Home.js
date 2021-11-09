@@ -10,7 +10,7 @@ import toys from "../Images/toys.png"
 import videoGame from "../Images/videoGame.png"
 import {  useNavigate } from "react-router-dom";
 import '../styleFiles/home.css'
-
+import {AddToCart} from './reducers/user/action'
 import Product from "./Product";
 
 
@@ -21,6 +21,11 @@ function Home() {
     const state = useSelector((state)=>{
         return {
           product: state.ProductsReducer.products,
+        }
+      })
+      const state2 = useSelector((state2)=>{
+        return {
+          product: state2.UserReducer,
         }
       })
     // const state2 = useSelector((state)=>{
@@ -68,7 +73,11 @@ function Home() {
                     <p className="barnd">{e.brandPr}</p>
                     <p className="price">{e.pricePr}SR</p>
                     <button className="addToWishList" onClick={()=>{ }}>Add to Wish List</button>
-                    <button className="addToCart" onClick={()=>{}}>Add to cart</button>
+                    <button className="addToCart" onClick={()=>{
+                        console.log(e)
+                        dispatch(AddToCart(e)) 
+                        console.log(state2)
+                         }}>Add to cart</button>
                  </div>
             )
             })}

@@ -5,3 +5,10 @@ export const addUser = (newUser) =>{
     }
 }
 
+export const AddToCart=(item)=>{
+    // console.log(item)
+    return{
+      type:"ADD_TO_CART",
+      payload:item,
+    }
+  }
