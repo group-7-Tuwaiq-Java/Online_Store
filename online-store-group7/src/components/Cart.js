@@ -6,37 +6,45 @@ import "../styleFiles/Cart.css"
 import { useState } from "react";
 
 function Cart() {
-  
+  var  [totalPrice,setTotalPrice]=useState(0);
 const state=useSelector((state)=>{
+
     return{
-        cart:state.CartReducer.cart,
-    }
+        cart:state.UserReducer.cart,
+}
 })
- 
+
 const counter = useSelector((state) =>{
 return{
   counter:state.CartCounterReducer
 }})
 const dispatch=useDispatch();
+console.log(state.cart);
+const change=(e)=>{
+  if(e.target.value=="delivery"){
+   setTotalPrice= totalPrice +=20; 
+  }
 
-
+}
 return (       
         <div>
           <>
            <h2>Cart</h2>
            {state.cart.map(e=>{
+           totalPrice +=e.pricePr*counter.counter;
              return(
+              
             <div className="Cart">
             <img src={e.imgPr}/>
             <p>{e.namePr}</p>
             <p>{e.pricePr}SR</p>
-            <button onClick={() => dispatch(increment())}>+</button>
+            <button onClick={() => dispatch(increment(e))}>+</button>
             <p>{counter.counter}</p>
             <button onClick={() => dispatch(decrement())}>-</button>
             </div>
-           
            )
            })}
+           
             </>
            <hr></hr>
             
@@ -62,19 +70,23 @@ return (
   </Form.Group>
     <Form.Group controlId="formGridState">
       <Form.Label>Delivery: </Form.Label>
-      <Form.Select defaultValue="Choose...">
+      <Form.Select defaultValue="Choose..." onChange={change}>
         <option>Choose...</option>
-        <option>DHL</option>
-        <option>Aramex</option>
-        <option>Express</option>
+        <option value="collection">Collection</option>
+        <option value="delivery">Delivery</option>
       </Form.Select>
     </Form.Group>  
-
+    <Form.Group className="mb-3 " controlId="formBasicName">
+    <Form.Label>Promo Code:</Form.Label>
+    <Form.Control type="text" placeholder="Enter promo code" />
+  </Form.Group>
   <Button variant="secondary" type="submit">
-    Order
+    Checkout
   </Button>
 </Form>
 </>
+            <p>total:</p>
+           <p>{setTotalPrice}</p>
         </div>
     );
     

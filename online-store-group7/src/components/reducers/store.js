@@ -3,7 +3,7 @@ import ProductsReducer from "./products/productsReducer"
 import CartCounterReducer from "./CartCounterReducer"
 import UserReducer from "./user/userReducer"
 
-const reducers = combineReducers({ProductsReducer,UserReducer})
+const reducers = combineReducers({ProductsReducer,UserReducer,CartCounterReducer})
 
 
 
