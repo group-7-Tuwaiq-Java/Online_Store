@@ -12,6 +12,7 @@ import {  useNavigate } from "react-router-dom";
 import '../styleFiles/home.css'
 
 import Product from "./Product";
+import { Link } from "react-router-dom";
 
 
 function Home() {
@@ -31,7 +32,8 @@ function Home() {
     //to display 4 product in home page
     let arr=[]
     for (let i = 0; i < 4; i++) {
-        arr[i]=state.product[i]
+        const ran= Math.floor(Math.random() * 80)+1;
+        arr[i]=state.product[ran]
     }
     // console.log(state2.wishList);
     return (
@@ -63,7 +65,7 @@ function Home() {
             {arr.map((e,i)=>{
             return(
                 <div className="productItem">
-                    <img src={e.imgPr} className="imgSize"/>
+                   <Link to={`/productDetails/${e.idPr}`} > <img src={e.imgPr} className="imgSize"/></Link>
                     <p className="Name">{e.namePr}</p>
                     <p className="barnd">{e.brandPr}</p>
                     <p className="price">{e.pricePr}SR</p>
