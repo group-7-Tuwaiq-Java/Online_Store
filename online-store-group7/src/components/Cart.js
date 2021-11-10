@@ -109,8 +109,6 @@ return (
             <p>total:</p>
            <p>{setTotalPrice}</p>
         </div>
-</> 
-        </div> 
          
     );
     
