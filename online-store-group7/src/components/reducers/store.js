@@ -7,9 +7,10 @@ import CartReducer from "./cartReducer/cartReducer"
 import WishListReducer from "./wishList/wishListReducer"
 import AdminReducer from "../../isAdmin/isAdminReducer"
 import HistoryReducer from "./orderHistory/HistoryReducer"
+import SearchReducer from "./search/searchReducer"
 
 
-const reducers = combineReducers({ProductsReducer,UserReducer,CartCounterReducer,IsLogged,CartReducer,WishListReducer,AdminReducer,HistoryReducer})
+const reducers = combineReducers({ProductsReducer,UserReducer,CartCounterReducer,IsLogged,CartReducer,WishListReducer,AdminReducer,HistoryReducer,SearchReducer})
 
 
 
