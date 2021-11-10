@@ -8,6 +8,7 @@ import { useState } from "react";
 import App from "../App";
 import { ChangeLogged } from "./reducers/IsLogged/action";
 import { CreateCart } from "./reducers/cartReducer/action";
+import { ChangeAdminState } from "../isAdmin/action";
 
 function SignIn() {
 const navigate=useNavigate();
@@ -26,10 +27,25 @@ const logged = useSelector((state)=>{
     users:state.IsLogged.isLogged,
   }
 })
+const Admin = useSelector((state)=>{
+  return {
+    admin:state.AdminReducer.state.isAdmin,
+  }
+})
+
 
 function SignInFunction(){
+  
   const checkUser= state.users.filter((e)=>userName === e.userName && pass === e.password)
   if (checkUser.length>0){
+    if (userName === "user1"){
+      const changeAdmin={
+        isAdmin:!Admin.admin
+      }
+      const action2 = ChangeAdminState(changeAdmin)
+      dispatch(action2)
+      navigate("/")
+    }
     console.log(checkUser);
     const checkIfLogged={
       userName:userName,
@@ -37,17 +53,12 @@ function SignInFunction(){
     }
     const action = ChangeLogged(checkIfLogged)
     dispatch(action)
-    
-    // const action2 = CreateCart({
-    //   userName:userName,
-    //   cart:[]
-    // })
-    // dispatch(action2)
     navigate("/")
   }
   else{
     alert("User Name Or Password Wrong")
   }
+
   
 }
     return (

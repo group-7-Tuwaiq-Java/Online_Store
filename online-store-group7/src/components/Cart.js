@@ -86,7 +86,7 @@ return (
 </Form>
 </>
             <p>total:</p>
-           <p>{totalPrice}</p>
+           <p>{setTotalPrice}</p>
         </div>
     );
     

@@ -12,6 +12,7 @@ import {  useNavigate } from "react-router-dom";
 import '../styleFiles/home.css'
 // import {AddToCart} from './reducers/user/action'
 import { AddToCart } from "./reducers/cartReducer/action";
+import { AddToWishList } from "./reducers/wishList/action";
 import Product from "./Product";
 import { Link } from "react-router-dom";
 
@@ -38,8 +39,7 @@ function Home() {
     //to display 4 product in home page
     let arr=[]
     for (let i = 0; i < 4; i++) {
-        const ran= Math.floor(Math.random() * 80)+1;
-        arr[i]=state.product[ran]
+        arr[i]=state.product[i]
     }
     // console.log(state2.wishList);
     return (
@@ -75,7 +75,12 @@ function Home() {
                     <p className="Name">{e.namePr}</p>
                     <p className="barnd">{e.brandPr}</p>
                     <p className="price">{e.pricePr}SR</p>
-                    <button className="addToWishList" onClick={()=>{ }}>Add to Wish List</button>
+                    <button className="addToWishList" onClick={()=>{
+                       console.log(e)
+                       const action3 = AddToWishList(e)
+                       dispatch(action3)
+                       console.log(state2)
+                    }}>Add to Wish List</button>
                     <button className="addToCart" onClick={()=>{
                         console.log(e)
                         const action2 = AddToCart(e)

@@ -13,6 +13,8 @@ import SignUp from './components/SignUp';
 import ProductDetails from './components/ProductDetails';
 import Cart from './components/Cart';
 import Footer from './components/footer';
+import AdminPage from './components/AdminPage';
+import History from './components/History';
 
 
 function App({userName}) {
@@ -32,12 +34,14 @@ function App({userName}) {
       
           <Routes>
                 <Route path="/" element={<Home />} />
-                {/* <Route path="/wishList" element={<WishList/>} /> */}
+                <Route path="/wishList" element={<WishList/>} />
                 <Route path="/signIn" element={<SignIn />} />
                 <Route path="/products" element={<ProductsList/>} /> 
                 <Route path="/SignUp" element={<SignUp/>} />
-                <Route path="/productDetails/:id" element={<ProductDetails/>} />         
+                <Route path="/productDetails/:id" element={<ProductDetails/>} />  
+                <Route path="/adminPage"element={<AdminPage/>}/>       
                 <Route path="/Cart" element={<Cart/>} />  
+                <Route path="/history" element={<History/>}/>
               </Routes>
     <div className="footerGrid">
           <Footer/>
