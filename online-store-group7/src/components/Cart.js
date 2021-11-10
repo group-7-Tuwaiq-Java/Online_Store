@@ -1,13 +1,20 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Products } from "./objectsOfProducts";
 import {Form,Button} from "react-bootstrap";
 import "../styleFiles/Cart.css"
 import { useEffect, useState } from "react";
 import Counter from "./Counter";
 import UserReducer from "./reducers/user/userReducer";
+import { AddToHistory } from "./reducers/orderHistory/action";
+import { ClearCart } from "./reducers/cartReducer/action";
+import { useNavigate } from "react-router";
 function Cart() {
 const [totalPrice,setTotalPrice]=useState(0);
 const [subtotalPrice,setsubTotalPrice]=useState();
+
+const dispatch = useDispatch()
+const navigate=useNavigate();
+
 
 const state=useSelector((state)=>{
   console.log(state)
@@ -49,6 +56,18 @@ useEffect(()=>{
   setsubTotalPrice(sub)
 })
 console.log(totalPrice);
+
+function CheckOut(){
+  state.cart.map(e=>{
+    const action = AddToHistory(e)
+    console.log(action);
+    dispatch(action)
+  })
+ 
+  const action2 = ClearCart()
+  dispatch(action2)
+  navigate("/history")
+}
 return (       
         <div>
           <>
@@ -101,7 +120,7 @@ return (
     <Form.Label>Promo Code:</Form.Label>
     <Form.Control type="text" placeholder="Enter promo code" onChange={coupon}/>
   </Form.Group>
-  <Button variant="secondary" type="submit">
+  <Button variant="secondary" type="button" onClick={CheckOut}>
     Checkout
   </Button>
 </Form>
