@@ -10,7 +10,7 @@ function Cart() {
 const state=useSelector((state)=>{
 
     return{
-        cart:state.UserReducer.cart,
+        cart:state.CartReducer.cart,
 }
 })
 
@@ -86,7 +86,7 @@ return (
 </Form>
 </>
             <p>total:</p>
-           <p>{setTotalPrice}</p>
+           <p>{totalPrice}</p>
         </div>
     );
     

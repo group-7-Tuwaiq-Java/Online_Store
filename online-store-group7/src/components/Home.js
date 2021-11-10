@@ -10,8 +10,10 @@ import toys from "../Images/toys.png"
 import videoGame from "../Images/videoGame.png"
 import {  useNavigate } from "react-router-dom";
 import '../styleFiles/home.css'
-import {AddToCart} from './reducers/user/action'
+// import {AddToCart} from './reducers/user/action'
+import { AddToCart } from "./reducers/cartReducer/action";
 import Product from "./Product";
+import { Link } from "react-router-dom";
 
 
 function Home() {
@@ -25,7 +27,7 @@ function Home() {
       })
       const state2 = useSelector((state2)=>{
         return {
-          product: state2.UserReducer,
+          product: state2.CartReducer,
         }
       })
     // const state2 = useSelector((state)=>{
@@ -36,7 +38,8 @@ function Home() {
     //to display 4 product in home page
     let arr=[]
     for (let i = 0; i < 4; i++) {
-        arr[i]=state.product[i]
+        const ran= Math.floor(Math.random() * 80)+1;
+        arr[i]=state.product[ran]
     }
     // console.log(state2.wishList);
     return (
@@ -68,14 +71,15 @@ function Home() {
             {arr.map((e,i)=>{
             return(
                 <div className="productItem">
-                    <img src={e.imgPr} className="imgSize"/>
+                   <img src={e.imgPr} className="imgSize"/>
                     <p className="Name">{e.namePr}</p>
                     <p className="barnd">{e.brandPr}</p>
                     <p className="price">{e.pricePr}SR</p>
                     <button className="addToWishList" onClick={()=>{ }}>Add to Wish List</button>
                     <button className="addToCart" onClick={()=>{
                         console.log(e)
-                        dispatch(AddToCart(e)) 
+                        const action2 = AddToCart(e)
+                        dispatch(action2)
                         console.log(state2)
                          }}>Add to cart</button>
                  </div>

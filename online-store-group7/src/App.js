@@ -15,19 +15,19 @@ import Cart from './components/Cart';
 import Footer from './components/footer';
 
 
-function App() {
+function App({userName}) {
 
-  const state = useSelector((state)=>{
-    // console.log(state);
-    return {
-      product: state.ProductsReducer.products,
-    }
-  })
+  // const state = useSelector((state)=>{
+  //   // console.log(state);
+  //   return {
+  //     product: state.ProductsReducer.products,
+  //   }
+  // })
 
   return (
     <>
     <div className="page">
-    <NavBar/>
+    <NavBar userName={userName}/>
        
       
           <Routes>

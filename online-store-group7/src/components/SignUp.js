@@ -4,8 +4,10 @@ import "../styleFiles/signIn.css"
 import { addUser } from "./reducers/user/action";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router";
 
 function SignUp() {
+  const navigate = useNavigate()
   const [userName, setUserName] = useState()
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
@@ -18,10 +20,7 @@ function SignUp() {
  const newUserObj={
     userName:userName,
     password:password,
-    email:email,
-    whishList:[],
-    cart:[],
-    orderHis:[]
+    email:email
   }
   console.log(state.users);
 
@@ -34,9 +33,9 @@ function SignUp() {
       alert("User Name or Email already exist ")
     }
     else{
-    console.log(checkIfExist);
     const action = addUser(newUserObj)
     dispatch(action)  
+    navigate("/SignIn")
   }
   
 }
