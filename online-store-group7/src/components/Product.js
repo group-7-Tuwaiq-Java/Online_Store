@@ -18,7 +18,21 @@ function Product({products}) {
                     <p className="barnd">{e.brandPr}</p>
                     <p className="price">{e.pricePr}SR</p>
                     <button className="addToWishList" onClick={(e)=>{ }}>Add to Wish List</button>
-                    <button className="addToCart"  onClick={(e)=>{dispatch(AddToCart(e)) }}>Add to cart</button>
+                    <button className="addToCart"  onClick={()=>{
+                            let obj ={
+                            idPr:e.idPr,
+                            namePr:e.namePr,
+                            imgPr:e.imgPr,
+                            pricePr:e.pricePr,
+                            detailesPr:e.detailesPr,
+                            typePr:e.typePr,
+                            ratingPr:e.ratingPr,
+                            brandPr:e.brandPr,
+                            quantity:e.quantity,
+                            count: 1
+                        }
+                        dispatch(AddToCart(obj)) 
+                        }}>Add to cart</button>
                  </div>
             )
             })}

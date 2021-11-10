@@ -15,6 +15,23 @@ const CartReducer =(state = initialState,{type,payload})=>{
         return{
             cart:[...state.cart, payload]
         }
+
+        case "INCREMENT":
+        const newInc = state.cart.map((elem)=>{
+            if(elem.idPr===payload.idPr){
+
+                return [{...elem, count: elem.count+1}]
+            }
+        })
+        const res = state.cart.map(obj => newInc.find(old=> old.idPr === obj.idPr) || obj)
+        return {
+            cart: res
+        }
+    //   case "DECREMENT":
+      
+    //     return {
+    //         count:[...state.count, newDec]
+    //     }
             default:
                 return state
         }
