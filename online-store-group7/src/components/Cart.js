@@ -1,14 +1,17 @@
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
 import { Products } from "./objectsOfProducts";
 import {Form,Button} from "react-bootstrap";
 import "../styleFiles/Cart.css"
 import { useEffect, useState } from "react";
 import Counter from "./Counter";
 import UserReducer from "./reducers/user/userReducer";
+import {increment,decrement} from "./reducers/CartCounterReducer";
+
 function Cart() {
 const [totalPrice,setTotalPrice]=useState(0);
 const [subtotalPrice,setsubTotalPrice]=useState();
-
+const [couponvalue,setCouponvalue]=useState();
+const dispatch=useDispatch();
 const state=useSelector((state)=>{
   console.log(state)
     return{
@@ -24,13 +27,19 @@ console.log(state.cart);
 //calculate the total with delivery
 const code="React";
 const change=(e)=>{
+  
   if(e.target.value=="delivery"){
-    setTotalPrice(subtotalPrice+20);
+    let delivery=subtotalPrice+20
+    setTotalPrice(delivery);
   }
 }
 //Calculate the total with promo code 
+const handlecahnge=(e)=>{
+  setCouponvalue(e.target.value)
+}
 const coupon =(e)=>{
-if(e.target.value ==code){
+  e.preventDefault()
+if(couponvalue ==code){
   const discount = subtotalPrice*0.20
   setTotalPrice(subtotalPrice-discount)
   console.log(subtotalPrice-discount)
@@ -42,12 +51,12 @@ if(e.target.value ==code){
 useEffect(()=>{
   let sub=0;
   state.cart.map(e=>{
-    sub +=e.pricePr*counter.counter;
+    sub +=e.pricePr*e.count;
   })
   setTotalPrice(sub)
   
   setsubTotalPrice(sub)
-})
+},[])
 console.log(totalPrice);
 return (       
         <div>
@@ -60,7 +69,10 @@ return (
             <p>{e.namePr}</p>
             <p>{e.pricePr}SR</p>
             
-          <Counter element={e}/>
+            <button onClick={() => dispatch(increment(e))}>+</button>
+           <p> {e.count}</p>
+            
+            <button onClick={() => dispatch(decrement(e))}>-</button>
 
             </div>
            )
@@ -99,8 +111,11 @@ return (
     </Form.Group>  
     <Form.Group className="mb-3 " controlId="formBasicName">
     <Form.Label>Promo Code:</Form.Label>
-    <Form.Control type="text" placeholder="Enter promo code" onChange={coupon}/>
+    <Form.Control type="text" placeholder="Enter promo code" onChange={handlecahnge}/>
   </Form.Group>
+  <Button variant="secondary" type="submit" onClick={coupon}>
+    Applay
+  </Button>
   <Button variant="secondary" type="submit">
     Checkout
   </Button>
