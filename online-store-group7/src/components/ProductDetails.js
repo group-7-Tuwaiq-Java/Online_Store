@@ -31,7 +31,14 @@ function ProductDetails({products}) {
                     </div>
                  <div className="description">
                      <h2>Description:</h2>
-                    <p className="Name">{e.detailesPr}</p>
+                    <ul className="Name">
+                        {e.detailesPr.map(y=>{
+                            return(
+                                <li>{y}</li>
+                            )
+                        })}
+                    </ul>
+
                     <p className="barnd">{e.brandPr}</p>
                  </div>
                 </div>

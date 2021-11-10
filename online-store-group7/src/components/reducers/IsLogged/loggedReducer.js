@@ -4,7 +4,7 @@ const initialState ={
 }
 
 const IsLogged = (state = initialState,{type,payload})=>{
-    console.log(payload);
+    // console.log(payload);
     switch (type){
         case "LOG_IN":
             return{

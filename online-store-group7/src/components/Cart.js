@@ -1,4 +1,4 @@
-import { useSelector,useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Products } from "./objectsOfProducts";
 import {Form,Button} from "react-bootstrap";
 import "../styleFiles/Cart.css"
@@ -6,12 +6,16 @@ import { useEffect, useState } from "react";
 import Counter from "./Counter";
 import UserReducer from "./reducers/user/userReducer";
 import {increment,decrement} from "./reducers/CartCounterReducer";
-
+import { AddToHistory } from "./reducers/orderHistory/action";
+import { ClearCart } from "./reducers/cartReducer/action";
+import { useNavigate } from "react-router";
 function Cart() {
 const [totalPrice,setTotalPrice]=useState(0);
 const [subtotalPrice,setsubTotalPrice]=useState();
 const [couponvalue,setCouponvalue]=useState();
 const dispatch=useDispatch();
+const navigate=useNavigate();
+
 const state=useSelector((state)=>{
   console.log(state)
     return{
@@ -27,7 +31,6 @@ console.log(state.cart);
 //calculate the total with delivery
 const code="React";
 const change=(e)=>{
-  
   if(e.target.value=="delivery"){
     let delivery=subtotalPrice+20
     setTotalPrice(delivery);
@@ -58,6 +61,18 @@ useEffect(()=>{
   setsubTotalPrice(sub)
 },[])
 console.log(totalPrice);
+
+function CheckOut(){
+  state.cart.map(e=>{
+    const action = AddToHistory(e)
+    console.log(action);
+    dispatch(action)
+  })
+ 
+  const action2 = ClearCart()
+  dispatch(action2)
+  navigate("/history")
+}
 return (       
         <div>
           <>
@@ -113,15 +128,20 @@ return (
     <Form.Label>Promo Code:</Form.Label>
     <Form.Control type="text" placeholder="Enter promo code" onChange={handlecahnge}/>
   </Form.Group>
+
   <Button variant="secondary" type="submit" onClick={coupon}>
     Applay
   </Button>
-  <Button variant="secondary" type="submit">
+  
+  <Button variant="secondary" type="button" onClick={CheckOut}>
+
     Checkout
   </Button>
 </Form>
-</> 
-        </div> 
+</>
+            {/* <p>total:</p>
+           <p>{setTotalPrice}</p> */}
+        </div>
          
     );
     

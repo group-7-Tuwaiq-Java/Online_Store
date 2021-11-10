@@ -7,14 +7,14 @@ const CartReducer =(state = initialState,{type,payload})=>{
     // newArr.push(payload)
     console.log(state);
     switch (type){
-    case "CREATE_CART":
-            return{
-                cart:[...state, payload]
-            }
     case "ADD_TO_CART":
         return{
             cart:[...state.cart, payload]
         }
+        case "CLEAR_CART":
+            return{
+                cart:[]
+            }
 
         case "INCREMENT":
         const index=state.cart.findIndex(element=>element.idPr==payload.idPr)
