@@ -7,9 +7,22 @@ function History() {
           historyy:state.HistoryReducer,
         }
       })
-      console.log(gitHistory.historyy);
+      console.log(gitHistory.historyy.orderHistory);
     return (
         <>
+        <div>
+            {gitHistory.historyy.orderHistory.map(e=>{
+            return(
+                <div className="wishList">
+                    <div className="gridList">
+                    <img src={e.imgPr} className="imgSize"/>
+                    <p>{e.namePr}</p>
+                    <p>{e.pricePr}SR</p>
+                    </div>
+                </div>
+            )
+            })}
+        </div>
         </>
             );
 }
