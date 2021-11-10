@@ -2,19 +2,23 @@
 const counter = (state = 1, action) => {
     switch (action.type) {
       case "INCREMENT":
-        return state + 1;
+          console.log(action.payload)
+        const quan=action.payload.quantity;        
+        return Math.min(state + 1,quan);
       case "DECREMENT":
-        return state - 1;
+        return Math.max(state - 1,0);
       default:
         return state;
     }
   };
   
-  export const increment = () => {
+  export const increment = (payload) => {
     return {
       type: "INCREMENT",
+      payload:payload,
     };
   };
+
   export const decrement = () => {
     return {
       type: "DECREMENT",

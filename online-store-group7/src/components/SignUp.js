@@ -20,10 +20,7 @@ function SignUp() {
  const newUserObj={
     userName:userName,
     password:password,
-    email:email,
-    whishList:[],
-    cart:[],
-    orderHis:[]
+    email:email
   }
   console.log(state.users);
 

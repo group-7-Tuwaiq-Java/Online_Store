@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import App from "../App";
 import { ChangeLogged } from "./reducers/IsLogged/action";
+import { CreateCart } from "./reducers/cartReducer/action";
 
 function SignIn() {
 const navigate=useNavigate();
@@ -34,9 +35,14 @@ function SignInFunction(){
       userName:userName,
       isLogged:!logged.users
     }
-    
     const action = ChangeLogged(checkIfLogged)
     dispatch(action)
+    
+    // const action2 = CreateCart({
+    //   userName:userName,
+    //   cart:[]
+    // })
+    // dispatch(action2)
     navigate("/")
   }
   else{
