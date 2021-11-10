@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 function History() {
 
@@ -15,7 +16,7 @@ function History() {
             return(
                 <div className="wishList">
                     <div className="gridList">
-                    <img src={e.imgPr} className="imgSize"/>
+                    <Link to={`/productDetails/${e.idPr}`} > <img src={e.imgPr} className="imgSize"/></Link>
                     <p>{e.namePr}</p>
                     <p>{e.pricePr}SR</p>
                     </div>

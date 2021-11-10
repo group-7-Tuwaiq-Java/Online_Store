@@ -45,7 +45,7 @@ function NavBar (){
     <ul className="listU">
     {/* <BrowserRouter> */}
        <li className="listl " ><Link to="/" className="listlA"> Home</Link> </li>
-       {logged.users.isLogged&&<li className="listl listlA" >{logged.users.userLoggedIn}</li>}
+       {logged.users.isLogged&& <Link to="/history"> <li className="listl listlA" >{logged.users.userLoggedIn}</li></Link>}
        { Admin.admin && <Link to="/adminPage"> <li className="listl listlA" >Admin Page</li> </Link>}
       {logged.users.isLogged&& <li className="listl" ><Link to="/wishList" className="listlA">Wish Item</Link></li>}
        {logged.users.isLogged&& <li className="listR" ><Link to="/cart" className="listlA"> <img src={cart} className="imgCart"/></Link></li>}
