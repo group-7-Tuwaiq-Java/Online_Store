@@ -15,6 +15,7 @@ import Cart from './components/Cart';
 import Footer from './components/footer';
 import AdminPage from './components/AdminPage';
 import History from './components/History';
+import Search from './components/search';
 
 
 function App({userName}) {
@@ -42,6 +43,7 @@ function App({userName}) {
                 <Route path="/adminPage"element={<AdminPage/>}/>       
                 <Route path="/Cart" element={<Cart/>} />  
                 <Route path="/history" element={<History/>}/>
+                <Route path="/search" element={<Search/>}/>
               </Routes>
     <div className="footerGrid">
           <Footer/>
