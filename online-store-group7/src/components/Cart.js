@@ -105,6 +105,10 @@ return (
     Checkout
   </Button>
 </Form>
+</>
+            <p>total:</p>
+           <p>{setTotalPrice}</p>
+        </div>
 </> 
         </div> 
          

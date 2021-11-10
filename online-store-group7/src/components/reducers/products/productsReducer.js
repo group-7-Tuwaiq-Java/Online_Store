@@ -6,6 +6,10 @@ const initialState ={
 
 const ProductsReducer = (state = initialState,{type,payload})=>{
     switch (type){
+        case "DELETE_PRODUCT":
+            return{
+                products:payload
+            }
     
         default:
             return state;
