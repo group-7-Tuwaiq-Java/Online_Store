@@ -78,6 +78,18 @@ function Home() {
                     <button className="addToWishList" onClick={()=>{ }}>Add to Wish List</button>
                     <button className="addToCart" onClick={()=>{
                         console.log(e)
+                        // const obj ={
+                        //     idPr:e.idPr,
+                        //     namePr:e.namePr,
+                        //     imgPr:e.imgPr,
+                        //     pricePr:e.pricePr,
+                        //     detailesPr:e.detailesPr,
+                        //     typePr:e.typePr,
+                        //     ratingPr:e.ratingPr,
+                        //     brandPr:e.brandPr,
+                        //     quantity:e.quantity,
+                        //     count: 1
+                        // }
                         const action2 = AddToCart(e)
                         dispatch(action2)
                         console.log(state2)

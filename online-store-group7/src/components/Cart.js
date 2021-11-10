@@ -1,53 +1,74 @@
-import { useSelector,useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { Products } from "./objectsOfProducts";
-import {increment,decrement} from "./reducers/CartCounterReducer"
 import {Form,Button} from "react-bootstrap";
 import "../styleFiles/Cart.css"
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
+import Counter from "./Counter";
+import UserReducer from "./reducers/user/userReducer";
 function Cart() {
-  var  [totalPrice,setTotalPrice]=useState(0);
-const state=useSelector((state)=>{
+const [totalPrice,setTotalPrice]=useState(0);
+const [subtotalPrice,setsubTotalPrice]=useState();
 
+const state=useSelector((state)=>{
+  console.log(state)
     return{
-        cart:state.CartReducer.cart,
+      cart:state.CartReducer.cart,
 }
 })
-
 const counter = useSelector((state) =>{
-return{
-  counter:state.CartCounterReducer
-}})
-const dispatch=useDispatch();
+  return{
+    counter:state.CartCounterReducer.count
+  }})
+
 console.log(state.cart);
+//calculate the total with delivery
+const code="React";
 const change=(e)=>{
   if(e.target.value=="delivery"){
-   setTotalPrice= totalPrice +=20; 
+    setTotalPrice(subtotalPrice+20);
   }
-
 }
+//Calculate the total with promo code 
+const coupon =(e)=>{
+if(e.target.value ==code){
+  const discount = subtotalPrice*0.20
+  setTotalPrice(subtotalPrice-discount)
+  console.log(subtotalPrice-discount)
+  console.log(subtotalPrice)
+}else{
+  alert("invalid promo code")
+}
+}
+useEffect(()=>{
+  let sub=0;
+  state.cart.map(e=>{
+    sub +=e.pricePr*counter.counter;
+  })
+  setTotalPrice(sub)
+  
+  setsubTotalPrice(sub)
+})
+console.log(totalPrice);
 return (       
         <div>
           <>
            <h2>Cart</h2>
            {state.cart.map(e=>{
-           totalPrice +=e.pricePr*counter.counter;
              return(
-              
             <div className="Cart">
             <img src={e.imgPr}/>
             <p>{e.namePr}</p>
             <p>{e.pricePr}SR</p>
-            <button onClick={() => dispatch(increment(e))}>+</button>
-            <p>{counter.counter}</p>
-            <button onClick={() => dispatch(decrement())}>-</button>
+            
+          <Counter element={e}/>
+
             </div>
            )
            })}
-           
+           <h3>total:</h3>
+           <p>{totalPrice}</p>
             </>
            <hr></hr>
-            
 {/* order details */}
            <>
     <Form className="CartForm">
@@ -78,16 +99,15 @@ return (
     </Form.Group>  
     <Form.Group className="mb-3 " controlId="formBasicName">
     <Form.Label>Promo Code:</Form.Label>
-    <Form.Control type="text" placeholder="Enter promo code" />
+    <Form.Control type="text" placeholder="Enter promo code" onChange={coupon}/>
   </Form.Group>
   <Button variant="secondary" type="submit">
     Checkout
   </Button>
 </Form>
-</>
-            <p>total:</p>
-           <p>{totalPrice}</p>
-        </div>
+</> 
+        </div> 
+         
     );
     
 }
