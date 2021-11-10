@@ -4,27 +4,31 @@ import {Form,Button} from "react-bootstrap";
 import "../styleFiles/Cart.css"
 import { useEffect, useState } from "react";
 import Counter from "./Counter";
+import UserReducer from "./reducers/user/userReducer";
 function Cart() {
 const [totalPrice,setTotalPrice]=useState(0);
 const [subtotalPrice,setsubTotalPrice]=useState();
-const state=useSelector((state)=>{
 
+const state=useSelector((state)=>{
+  console.log(state)
     return{
-        cart:state.UserReducer.cart,
+      cart:state.CartReducer.cart,
 }
 })
 const counter = useSelector((state) =>{
   return{
-    counter:state.CartCounterReducer
+    counter:state.CartCounterReducer.count
   }})
 
 console.log(state.cart);
+//calculate the total with delivery
 const code="React";
 const change=(e)=>{
   if(e.target.value=="delivery"){
     setTotalPrice(subtotalPrice+20);
   }
 }
+//Calculate the total with promo code 
 const coupon =(e)=>{
 if(e.target.value ==code){
   const discount = subtotalPrice*0.20
@@ -50,16 +54,13 @@ return (
           <>
            <h2>Cart</h2>
            {state.cart.map(e=>{
-              
-              
              return(
-           
             <div className="Cart">
             <img src={e.imgPr}/>
             <p>{e.namePr}</p>
             <p>{e.pricePr}SR</p>
             
-                       <Counter/>
+          <Counter element={e}/>
 
             </div>
            )
@@ -68,7 +69,6 @@ return (
            <p>{totalPrice}</p>
             </>
            <hr></hr>
-          
 {/* order details */}
            <>
     <Form className="CartForm">

@@ -1,29 +1,24 @@
 import {useDispatch , useSelector} from "react-redux";
 import {increment,decrement} from "./reducers/CartCounterReducer";
-function Counter() {
+function Counter({element}) {
     const counter = useSelector((state) =>{
         return{
-          counter:state.CartCounterReducer
+          counter:state.CartCounterReducer.count
         }})
-        const state=useSelector((state)=>{
-
-            return{
-                cart:state.UserReducer.cart,
-        }
-        })
+    
+    
         
         const dispatch=useDispatch();
         return(
             <div>
-             {state.cart.map(e=>{
-        return (
-               
+                       
         <div>
-            <button onClick={() => dispatch(increment(e))}>+</button>
-            <p>{counter.counter}</p>
-            <button onClick={() => dispatch(decrement(e))}>-</button>
-            </div>
-    ) })}
+            <button onClick={() => dispatch(increment(element))}>+</button>
+            {counter.counter.id === element.idPr ?  <p>{counter.counter.value}</p> : ""}
+            
+            <button onClick={() => dispatch(decrement(element))}>-</button>
+        </div>
+    
     </div>
     );
 }
