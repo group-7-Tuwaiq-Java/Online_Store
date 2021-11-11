@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { useNavigate } from 'react-router-dom';
 import {AddToCart} from './reducers/user/action'
+import { Link } from "react-router-dom";
 
 
 function ProductCategory({products}) {
@@ -25,7 +26,7 @@ function ProductCategory({products}) {
                 if(e.typePr == id){
             return(
                     <div className="productItem">
-                        <img src={e.imgPr} className="imgSize"/>
+                      <Link to={`/productDetails/${e.idPr}`} >  <img src={e.imgPr} className="imgSize"/></Link>
                         <p className="Name">{e.namePr}</p>
                         <p className="barnd">{e.brandPr}</p>
                         <p className="price">{e.pricePr}SR</p>
