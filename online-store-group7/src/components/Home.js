@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import WishList from "./WishList";
+import homeBanner from "../Images/homeBanner.png"
 import electronicDevice from "../Images/electronicDevice.png"
 import Fashion from "../Images/Fashion.png"
 import furnitures from "../Images/furnitures.png"
@@ -44,8 +45,9 @@ function Home() {
     // console.log(state2.wishList);
     return (
         <div>
-
-            <h2>Shop by Catogray:</h2>
+            <img id="homeBanner"src={homeBanner}/>
+            <div className="catograies">
+             <h2>Shop by Catogray</h2>
             <div className="HomeCatogray">
             <img src={electronicDevice}/>
             <img src={videoGame}/>
@@ -63,9 +65,10 @@ function Home() {
             <p>Camping and Hiking</p>
             <p>Fashion</p>
             <p>Toys and Games</p>
+            </div>
        </div>
 
-            <h2 className="header">Products</h2>
+            <h2>Products</h2>
 
             <div className="Products">
             {arr.map((e,i)=>{
