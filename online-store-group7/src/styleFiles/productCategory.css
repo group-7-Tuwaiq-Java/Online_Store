@@ -1,0 +1,27 @@
+.productItem{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    width: 90%;
+    height: 30rem;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.Product{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    /* width: 200px; */
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+    background-color: rgb(223, 224, 224);
+}
