@@ -16,6 +16,7 @@ import Footer from './components/footer';
 import AdminPage from './components/AdminPage';
 import History from './components/History';
 import Search from './components/search';
+import ProductCategory from './components/ProductCategory';
 
 
 function App({userName}) {
@@ -40,6 +41,7 @@ function App({userName}) {
                 <Route path="/products" element={<ProductsList/>} /> 
                 <Route path="/SignUp" element={<SignUp/>} />
                 <Route path="/productDetails/:id" element={<ProductDetails/>} />  
+                <Route path="/:id" element={<ProductCategory/>} />  
                 <Route path="/adminPage"element={<AdminPage/>}/>       
                 <Route path="/Cart" element={<Cart/>} />  
                 <Route path="/history" element={<History/>}/>

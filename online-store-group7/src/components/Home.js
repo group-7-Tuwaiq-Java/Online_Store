@@ -47,14 +47,22 @@ function Home() {
 
             <h2>Shop by Catogray:</h2>
             <div className="HomeCatogray">
-            <img src={electronicDevice}/>
-            <img src={videoGame}/>
+            <Link to={`/${"Electronics"}`} >  <img src={electronicDevice} /> </Link>
+            <Link to={`/${"Video Games"}`} >  <img src={videoGame} /> </Link>
+            <Link to={`/${"Shoes"}`} >  <img src={shoes} /> </Link>
+            <Link to={`/${"Kitchen"}`} >  <img src={spatula} /> </Link>
+            <Link to={`/${"Furniture"}`} >  <img src={furnitures} /> </Link>
+            <Link to={`/${"Camping & Hiking"}`} >  <img src={hiking} /> </Link>
+            <Link to={`/${"Fashion"}`} >  <img src={Fashion} /> </Link>
+            <Link to={`/${"Toys & Games"}`} >  <img src={toys} /> </Link>
+            {/* <img src={electronicDevice}/> */}
+            {/* <img src={videoGame}/>
             <img src={shoes}/>
             <img src={spatula}/>       
             <img src={furnitures}/>
             <img src={hiking}/>
             <img src={Fashion}/>
-            <img src={toys}/>
+            <img src={toys}/> */}
             <p>Electronics</p>
             <p>Video Games</p>
             <p>Shoes</p>
@@ -71,7 +79,7 @@ function Home() {
             {arr.map((e,i)=>{
             return(
                 <div className="productItem">
-                   <img src={e.imgPr} className="imgSize"/>
+                   <Link to={`/productDetails/${e.idPr}`} >  <img src={e.imgPr} className="imgSize"/> </Link>
                     <p className="Name">{e.namePr}</p>
                     <p className="barnd">{e.brandPr}</p>
                     <p className="price">{e.pricePr}SR</p>
