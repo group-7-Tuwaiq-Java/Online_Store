@@ -25,3 +25,7 @@
     padding: 20px;
     background-color: rgb(223, 224, 224);
 }
+
+img:hover {
+    background-color: rgb(143, 138, 138);
+  }
