@@ -3,9 +3,8 @@ import { Products } from "./objectsOfProducts";
 import {Form,Button} from "react-bootstrap";
 import "../styleFiles/Cart.css"
 import { useEffect, useState } from "react";
-import Counter from "./Counter";
 import UserReducer from "./reducers/user/userReducer";
-import {increment,decrement} from "./reducers/CartCounterReducer";
+import {increment,decrement} from "./reducers/cartReducer/cartReducer";
 import { AddToHistory } from "./reducers/orderHistory/action";
 import { ClearCart } from "./reducers/cartReducer/action";
 import { useNavigate } from "react-router";
@@ -13,6 +12,7 @@ function Cart() {
 const [totalPrice,setTotalPrice]=useState(0);
 const [subtotalPrice,setsubTotalPrice]=useState();
 const [couponvalue,setCouponvalue]=useState();
+const [countValue, setCount] = useState()
 const dispatch=useDispatch();
 const navigate=useNavigate();
 
@@ -22,10 +22,10 @@ const state=useSelector((state)=>{
       cart:state.CartReducer.cart,
 }
 })
-const counter = useSelector((state) =>{
-  return{
-    counter:state.CartCounterReducer.count
-  }})
+// const counter = useSelector((state) =>{
+//   return{
+//     counter:state.CartReducer.count
+//   }})
 
 console.log(state.cart);
 //calculate the total with delivery
@@ -57,9 +57,9 @@ useEffect(()=>{
     sub +=e.pricePr*e.count;
   })
   setTotalPrice(sub)
-  
   setsubTotalPrice(sub)
-},[])
+},[countValue])
+
 console.log(totalPrice);
 
 function CheckOut(){
@@ -83,12 +83,13 @@ return (
             <img src={e.imgPr}/>
             <p>{e.namePr}</p>
             <p>{e.pricePr}SR</p>
-            
-            <button onClick={() => dispatch(increment(e))}>+</button>
+            <button onClick={() =>{ 
+              setCount(e.count)
+              dispatch(increment(e))}}>+</button>
            <p> {e.count}</p>
-            
-            <button onClick={() => dispatch(decrement(e))}>-</button>
-
+            <button onClick={() => {
+              setCount(e.count)
+              dispatch(decrement(e))}}>-</button>
             </div>
            )
            })}
