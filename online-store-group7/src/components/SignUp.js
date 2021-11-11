@@ -61,11 +61,13 @@ function SignUp() {
 
     <Form.Control type="password" placeholder="Password" onChange={(e)=>{setPassword(e.target.value)}}/>
   </Form.Group>
+  <div className="buttonDesign">
   <Button variant="secondary" size="lg" onClick={AddNewUser}>
     Sign Up 
 
 
   </Button>
+  </div>
   </Form>
         </>
 

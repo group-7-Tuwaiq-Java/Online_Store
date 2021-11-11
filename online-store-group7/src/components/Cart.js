@@ -107,12 +107,14 @@ return (
             </div>
            )
            })}
-           <h3>total:</h3>
-           <p>{totalPrice}</p>
+           <div >
+            <h2 className="total">total:</h2>
+            <p className="total">{totalPrice} SR</p>
+           </div>
             </>
            <hr></hr>
 {/* order details */}
-           <>
+           <div className="formDesign">
     <Form className="CartForm">
         <h3>Shipment Information</h3>
   <Form.Group className="mb-3 " controlId="formBasicName">
@@ -144,16 +146,20 @@ return (
     <Form.Control type="text" placeholder="Enter promo code" onChange={handlecahnge}/>
   </Form.Group>
 
+  <div className="buttonDesign">
   <Button variant="secondary" type="submit" onClick={coupon}>
     Applay
   </Button>
   
+  <div>
   <Button variant="secondary" type="button" onClick={CheckOut}>
-
     Checkout
   </Button>
+  </div>
+  </div>
+
 </Form>
-</>
+</div>
             {/* <p>total:</p>
            <p>{setTotalPrice}</p> */}
         </div>
