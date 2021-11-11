@@ -75,13 +75,15 @@ function SignInFunction(){
     <Form.Label>Password</Form.Label>
     <Form.Control type="password" placeholder="Enter your Password" onChange={(e)=>{setPass(e.target.value)}}/>
   </Form.Group>
+  <div className="buttonDesign">
   <Button variant="secondary" size="lg" onClick={SignInFunction}>
     Sign In
   </Button>
-  <p>Don't have an account?</p>
+  <p><br></br>Don't have an account?</p>
   <Button variant="secondary" size="lg" onClick={()=>{navigate("/SignUp")}}>
     Sign Up 
   </Button>
+  </div>
   </Form>
  
 </>

@@ -7,6 +7,10 @@ const CartReducer =(state = initialState,{type,payload})=>{
     // newArr.push(payload)
     console.log(state);
     switch (type){
+        case "DELETE_FROM_CART":
+            return{
+                cart:payload
+            }
     case "ADD_TO_CART":
         return{
             cart:[...state.cart, payload]
@@ -24,6 +28,7 @@ const CartReducer =(state = initialState,{type,payload})=>{
             ...newArr[index],count:newArr[index].count+1
         } 
         }
+        
        
         return {
             cart: newArr
@@ -40,6 +45,7 @@ const CartReducer =(state = initialState,{type,payload})=>{
         return {
             cart:newArr1
         }
+        
             default:
                 return state
         }

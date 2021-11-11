@@ -13,7 +13,10 @@ button{
 .Cart{
     display: flex;
     flex-direction: row;
-    background-color: rgb(223, 224, 224);
+    /* background-color: rgb(223, 224, 224); */
+    border-color: rgb(191, 194, 194);
+    border:solid;
+    border-width: 20px;
     justify-content: center;
     align-items: center;
     gap: 20px;
@@ -25,4 +28,25 @@ h2{
 }
 p{
     font-size: large;
+}
+
+.formDesign{
+    display: flex;
+    justify-content: center;
+}
+.total{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+h2.total,p.total{
+    color:#808080;
+}
+.buttonDesign{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
