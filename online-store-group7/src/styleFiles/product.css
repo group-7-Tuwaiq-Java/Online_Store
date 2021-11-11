@@ -13,8 +13,8 @@
     padding-right: 5px;
   }
 
-  .Name{
-    font-size:smaller;
+  .NamePr{
+    font-size:small;
     font-family: 'Times New Roman', Times, serif;
   }
 
@@ -23,7 +23,12 @@
   }
 
 div.NameSize{
-  /* width: 20px;
-  height: 20px; */
+  /* font-size:smaller;
+
+  width: 20px;
+  height: 20px;
+  width: ; */
+
   background-color:aqua;
+  
 }
