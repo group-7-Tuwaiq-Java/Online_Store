@@ -6,6 +6,12 @@ import  "../styleFiles/product.css"
 import { Link } from "react-router-dom";
 
 function Product({products}) {
+
+    const logged = useSelector((state)=>{
+        return {
+          users:state.IsLogged,
+        }
+      })
     const dispatch = useDispatch();
     const navigate = useNavigate();
     return (
@@ -17,8 +23,8 @@ function Product({products}) {
                     <p className="Name">{e.namePr}</p>
                     <p className="barnd">{e.brandPr}</p>
                     <p className="price">{e.pricePr}SR</p>
-                    <button className="addToWishList" onClick={(e)=>{ }}>Add to Wish List</button>
-                    <button className="addToCart"  onClick={()=>{
+                  { logged.users.isLogged&& <button className="addToWishList" onClick={(e)=>{ }}>Add to Wish List</button>}
+                  { logged.users.isLogged&&  <button className="addToCart"  onClick={()=>{
                             let obj ={
                             idPr:e.idPr,
                             namePr:e.namePr,
@@ -32,7 +38,7 @@ function Product({products}) {
                             count: 1
                         }
                         dispatch(AddToCart(obj)) 
-                        }}>Add to cart</button>
+                        }}>Add to cart</button>}
                  </div>
             )
             })}

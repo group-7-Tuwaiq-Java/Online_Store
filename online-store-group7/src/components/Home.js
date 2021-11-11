@@ -19,6 +19,12 @@ import { Link } from "react-router-dom";
 
 function Home() {
 
+  const logged = useSelector((state)=>{
+    return {
+      users:state.IsLogged,
+    }
+  })
+
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const state = useSelector((state)=>{
@@ -83,13 +89,13 @@ function Home() {
                     <p className="Name">{e.namePr}</p>
                     <p className="barnd">{e.brandPr}</p>
                     <p className="price">{e.pricePr}SR</p>
-                    <button className="addToWishList" onClick={()=>{
+                    { logged.users.isLogged&&  <button className="addToWishList" onClick={()=>{
                        console.log(e)
                        const action3 = AddToWishList(e)
                        dispatch(action3)
                        console.log(state2)
-                    }}>Add to Wish List</button>
-                    <button className="addToCart" onClick={()=>{
+                    }}>Add to Wish List</button>}
+                 { logged.users.isLogged&&   <button className="addToCart" onClick={()=>{
                         console.log(e)
                         const obj ={
                             idPr:e.idPr,
@@ -106,7 +112,7 @@ function Home() {
                         const action2 = AddToCart(obj)
                         dispatch(action2)
                         console.log(state2)
-                         }}>Add to cart</button>
+                         }}>Add to cart</button>}
                  </div>
             )
             })}

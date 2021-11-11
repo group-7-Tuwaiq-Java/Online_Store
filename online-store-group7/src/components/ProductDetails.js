@@ -5,6 +5,11 @@ import { useNavigate } from 'react-router-dom';
 
 
 function ProductDetails({products}) {
+    const logged = useSelector((state)=>{
+        return {
+          users:state.IsLogged,
+        }
+      })
     const dispatch = useDispatch();
     const { id } = useParams();
 
@@ -26,8 +31,8 @@ function ProductDetails({products}) {
                         <p className="Name">{e.namePr}</p>
                         <p className="barnd">{e.brandPr}</p>
                         <p className="price">{e.pricePr}SR</p>
-                        <button className="addToWishList" onClick={()=>{}}>Add to Wish List</button>
-                        <button className="addToCart">Add to cart</button>
+                        { logged.users.isLogged&&  <button className="addToWishList" onClick={()=>{}}>Add to Wish List</button>}
+                        { logged.users.isLogged&&  <button className="addToCart">Add to cart</button>}
                     </div>
                  <div className="description">
                      <h2>Description:</h2>
