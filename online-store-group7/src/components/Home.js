@@ -79,7 +79,7 @@ function Home() {
             {arr.map((e,i)=>{
             return(
                 <div className="productItem">
-                   <Link to={`/productDetails/${e.idPr}`} >  <img src={e.imgPr} className="imgSize"/> </Link>
+                   <Link to={`/productDetails/${e.idPr}`} >  <img src={e.imgPr} id ="img" className="imgSize"/> </Link>
                     <p className="Name">{e.namePr}</p>
                     <p className="barnd">{e.brandPr}</p>
                     <p className="price">{e.pricePr}SR</p>

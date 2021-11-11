@@ -22,7 +22,7 @@ function ProductDetails({products}) {
             return(
                 <div className="details">
                     <div className="productItem">
-                        <img src={e.imgPr} className="imgSize"/>
+                        <img src={e.imgPr} className="imgDesign"/>
                         <p className="Name">{e.namePr}</p>
                         <p className="barnd">{e.brandPr}</p>
                         <p className="price">{e.pricePr}SR</p>
@@ -30,7 +30,7 @@ function ProductDetails({products}) {
                         <button className="addToCart">Add to cart</button>
                     </div>
                  <div className="description">
-                     <h2>Description:</h2>
+                     <h2>Description:</h2><br/>
                     <ul className="Name">
                         {e.detailesPr.map(y=>{
                             return(
@@ -39,7 +39,7 @@ function ProductDetails({products}) {
                         })}
                     </ul>
 
-                    <p className="barnd">{e.brandPr}</p>
+                    <p className="barnd">Brand: {e.brandPr}</p>
                  </div>
                 </div>
             )
