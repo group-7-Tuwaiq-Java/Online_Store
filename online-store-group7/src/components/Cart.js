@@ -9,6 +9,9 @@ import {increment,decrement} from "./reducers/CartCounterReducer";
 import { AddToHistory } from "./reducers/orderHistory/action";
 import { ClearCart } from "./reducers/cartReducer/action";
 import { useNavigate } from "react-router";
+import { DeleteFromCart } from "./reducers/cartReducer/action";
+
+
 function Cart() {
 const [totalPrice,setTotalPrice]=useState(0);
 const [subtotalPrice,setsubTotalPrice]=useState();
@@ -26,6 +29,8 @@ const counter = useSelector((state) =>{
   return{
     counter:state.CartCounterReducer.count
   }})
+
+
 
 console.log(state.cart);
 //calculate the total with delivery
@@ -88,6 +93,12 @@ return (
            <p> {e.count}</p>
             
             <button onClick={() => dispatch(decrement(e))}>-</button>
+            <button onClick={()=>{
+               const deleteItem = state.cart.filter(((f)=>f.idPr !== e.idPr))
+               const action2 = DeleteFromCart(deleteItem)
+              //  console.log(deleteItem);
+               dispatch(action2)
+            }}>Delete From Cart</button>
 
             </div>
            )
