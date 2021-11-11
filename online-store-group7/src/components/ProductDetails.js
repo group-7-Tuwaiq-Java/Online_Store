@@ -2,6 +2,8 @@ import productDetails from "../styleFiles/productDetails.css"
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { useNavigate } from 'react-router-dom';
+import { AddToWishList } from "./reducers/wishList/action";
+import { AddToCart } from "./reducers/cartReducer/action";
 
 
 function ProductDetails({products}) {
@@ -10,6 +12,17 @@ function ProductDetails({products}) {
           users:state.IsLogged,
         }
       })
+
+      const cart = useSelector((state)=>{
+        return {
+          cart:state.CartReducer.cart,
+        }
+      })
+      const wish = useSelector((state)=>{
+        return {
+          lista: state.WishListReducer.wishList,
+        }
+      })    
     const dispatch = useDispatch();
     const { id } = useParams();
 
@@ -31,8 +44,40 @@ function ProductDetails({products}) {
                         <p className="Name">{e.namePr}</p>
                         <p className="barnd">{e.brandPr}</p>
                         <p className="price">{e.pricePr}SR</p>
-                        { logged.users.isLogged&&  <button className="addToWishList" onClick={()=>{}}>Add to Wish List</button>}
-                        { logged.users.isLogged&&  <button className="addToCart">Add to cart</button>}
+                        { logged.users.isLogged&&  <button className="addToWishList" onClick={()=>{
+                            const cartFilter = wish.lista.filter((f)=>f.namePr === e.namePr)
+                            // console.log(cartFilter)
+                            if (cartFilter.length>0){
+                              alert("Item Already in Wish List")
+                            }
+                            else{
+                             const action3 = AddToWishList(e)
+                             dispatch(action3)
+                          //    console.log(state2)
+                            }
+                        }}>Add to Wish List</button>}
+                        { logged.users.isLogged&&  <button className="addToCart" onClick={()=>{
+                             const cartFilter = cart.cart.filter((f)=>f.namePr === e.namePr)
+                             console.log(cartFilter)
+                             if (cartFilter.length>0){
+                               alert("Item Already in Cart")
+                             }
+                             else{
+                                   let obj ={
+                                   idPr:e.idPr,
+                                   namePr:e.namePr,
+                                   imgPr:e.imgPr,
+                                   pricePr:e.pricePr,
+                                   detailesPr:e.detailesPr,
+                                   typePr:e.typePr,
+                                   ratingPr:e.ratingPr,
+                                   brandPr:e.brandPr,
+                                   quantity:e.quantity,
+                                   count: 1
+                               }
+                               dispatch(AddToCart(obj)) }
+                        }
+                        }>Add to cart</button>}
                     </div>
                  <div className="description">
                      <h2>Description:</h2><br/>

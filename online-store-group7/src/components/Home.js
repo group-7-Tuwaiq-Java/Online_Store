@@ -25,11 +25,23 @@ function Home() {
     }
   })
 
+  
+
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const state = useSelector((state)=>{
         return {
           product: state.ProductsReducer.products,
+        }
+      })
+      const cart = useSelector((state)=>{
+        return {
+          cart:state.CartReducer.cart,
+        }
+      })
+      const wish = useSelector((state)=>{
+        return {
+          lista: state.WishListReducer.wishList,
         }
       })
       const state2 = useSelector((state2)=>{
@@ -90,13 +102,27 @@ function Home() {
                     <p className="barnd">{e.brandPr}</p>
                     <p className="price">{e.pricePr}SR</p>
                     { logged.users.isLogged&&  <button className="addToWishList" onClick={()=>{
-                       console.log(e)
+
+                       console.log(wish.lista)
+                       const cartFilter = wish.lista.filter((f)=>f.namePr === e.namePr)
+                      // console.log(cartFilter)
+                      if (cartFilter.length>0){
+                        alert("Item Already in Wish List")
+                      }
+                      else{
                        const action3 = AddToWishList(e)
                        dispatch(action3)
                        console.log(state2)
+                      }
+                     
                     }}>Add to Wish List</button>}
                  { logged.users.isLogged&&   <button className="addToCart" onClick={()=>{
-                        console.log(e)
+                      const cartFilter = cart.cart.filter((f)=>f.namePr === e.namePr)
+                      console.log(cartFilter)
+                      if (cartFilter.length>0){
+                        alert("Item Already in Cart")
+                      }
+                      else{
                         const obj ={
                             idPr:e.idPr,
                             namePr:e.namePr,
@@ -112,6 +138,8 @@ function Home() {
                         const action2 = AddToCart(obj)
                         dispatch(action2)
                         console.log(state2)
+                      }
+                        
                          }}>Add to cart</button>}
                  </div>
             )
