@@ -11,3 +11,10 @@ export const ClearCart = ()=>{
         type:"CLEAR_CART",
     }
 }
+
+export const DeleteFromCart = (newCart)=>{
+    return{
+        type:"DELETE_FROM_CART",
+        payload:newCart
+    }
+}

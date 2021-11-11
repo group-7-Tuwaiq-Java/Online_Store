@@ -19,11 +19,29 @@ import { Link } from "react-router-dom";
 
 function Home() {
 
+  const logged = useSelector((state)=>{
+    return {
+      users:state.IsLogged,
+    }
+  })
+
+  
+
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const state = useSelector((state)=>{
         return {
           product: state.ProductsReducer.products,
+        }
+      })
+      const cart = useSelector((state)=>{
+        return {
+          cart:state.CartReducer.cart,
+        }
+      })
+      const wish = useSelector((state)=>{
+        return {
+          lista: state.WishListReducer.wishList,
         }
       })
       const state2 = useSelector((state2)=>{
@@ -47,14 +65,22 @@ function Home() {
 
             <h2>Shop by Catogray:</h2>
             <div className="HomeCatogray">
-            <img src={electronicDevice}/>
-            <img src={videoGame}/>
+            <Link to={`/${"Electronics"}`} >  <img src={electronicDevice} /> </Link>
+            <Link to={`/${"Video Games"}`} >  <img src={videoGame} /> </Link>
+            <Link to={`/${"Shoes"}`} >  <img src={shoes} /> </Link>
+            <Link to={`/${"Kitchen"}`} >  <img src={spatula} /> </Link>
+            <Link to={`/${"Furniture"}`} >  <img src={furnitures} /> </Link>
+            <Link to={`/${"Camping & Hiking"}`} >  <img src={hiking} /> </Link>
+            <Link to={`/${"Fashion"}`} >  <img src={Fashion} /> </Link>
+            <Link to={`/${"Toys & Games"}`} >  <img src={toys} /> </Link>
+            {/* <img src={electronicDevice}/> */}
+            {/* <img src={videoGame}/>
             <img src={shoes}/>
             <img src={spatula}/>       
             <img src={furnitures}/>
             <img src={hiking}/>
             <img src={Fashion}/>
-            <img src={toys}/>
+            <img src={toys}/> */}
             <p>Electronics</p>
             <p>Video Games</p>
             <p>Shoes</p>
@@ -71,18 +97,32 @@ function Home() {
             {arr.map((e,i)=>{
             return(
                 <div className="productItem">
-                   <img src={e.imgPr} className="imgSize"/>
+                   <Link to={`/productDetails/${e.idPr}`} >  <img src={e.imgPr} id ="img" className="imgSize"/> </Link>
                     <p className="Name">{e.namePr}</p>
                     <p className="barnd">{e.brandPr}</p>
                     <p className="price">{e.pricePr}SR</p>
-                    <button className="addToWishList" onClick={()=>{
-                       console.log(e)
+                    { logged.users.isLogged&&  <button className="addToWishList" onClick={()=>{
+
+                       console.log(wish.lista)
+                       const cartFilter = wish.lista.filter((f)=>f.namePr === e.namePr)
+                      // console.log(cartFilter)
+                      if (cartFilter.length>0){
+                        alert("Item Already in Wish List")
+                      }
+                      else{
                        const action3 = AddToWishList(e)
                        dispatch(action3)
                        console.log(state2)
-                    }}>Add to Wish List</button>
-                    <button className="addToCart" onClick={()=>{
-                        console.log(e)
+                      }
+                     
+                    }}>Add to Wish List</button>}
+                 { logged.users.isLogged&&   <button className="addToCart" onClick={()=>{
+                      const cartFilter = cart.cart.filter((f)=>f.namePr === e.namePr)
+                      console.log(cartFilter)
+                      if (cartFilter.length>0){
+                        alert("Item Already in Cart")
+                      }
+                      else{
                         const obj ={
                             idPr:e.idPr,
                             namePr:e.namePr,
@@ -98,7 +138,9 @@ function Home() {
                         const action2 = AddToCart(obj)
                         dispatch(action2)
                         console.log(state2)
-                         }}>Add to cart</button>
+                      }
+                        
+                         }}>Add to cart</button>}
                  </div>
             )
             })}
