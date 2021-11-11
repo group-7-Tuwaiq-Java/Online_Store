@@ -6,8 +6,8 @@ function Footer(){
 return(
         <footer>
             <div className="gridfooter">
-                <p className="ppp">Author: Hege Refsnes</p>
-                <p className="ppp2">Author: Hege Refsnes</p>
+                <p className="ppp"></p>
+                <p className="ppp2"></p>
                 </div>
         </footer>
         )
