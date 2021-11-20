@@ -4,7 +4,7 @@ import UserReducer from "./user/userReducer";
 import IsLogged from "./IsLogged/loggedReducer";
 import CartReducer from "./cartReducer/cartReducer";
 import WishListReducer from "./wishList/wishListReducer";
-import AdminReducer from "../../isAdmin/isAdminReducer";
+import AdminReducer from "./isAdmin/isAdminReducer";
 import HistoryReducer from "./orderHistory/HistoryReducer";
 import SearchReducer from "./search/searchReducer";
 

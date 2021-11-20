@@ -3,10 +3,10 @@ import { Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { increment, decrement } from "./reducers/cartReducer/cartReducer";
-import { AddToHistory } from "./reducers/orderHistory/action";
-import { ClearCart } from "./reducers/cartReducer/action";
-import { DeleteFromCart } from "./reducers/cartReducer/action";
+import { increment, decrement } from "../reducers/cartReducer/cartReducer";
+import { AddToHistory } from "../reducers/orderHistory/action";
+import { ClearCart } from "../reducers/cartReducer/action";
+import { DeleteFromCart } from "../reducers/cartReducer/action";
 
 function Cart() {
   const dispatch = useDispatch();

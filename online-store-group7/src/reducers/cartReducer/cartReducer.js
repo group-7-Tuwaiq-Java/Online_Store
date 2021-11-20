@@ -3,8 +3,6 @@ const initialState = {
 };
 
 const CartReducer = (state = initialState, { type, payload }) => {
-  // const newArr = state.slice()
-  // newArr.push(payload)
   console.log(state);
   switch (type) {
     case "DELETE_FROM_CART":

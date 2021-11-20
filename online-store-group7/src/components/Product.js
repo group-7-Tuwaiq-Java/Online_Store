@@ -2,8 +2,8 @@ import product from "../styleFiles/product.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { AddToCart } from "./reducers/user/action";
-import { AddToWishList } from "./reducers/wishList/action";
+import { AddToCart } from "../reducers/user/action";
+import { AddToWishList } from "../reducers/wishList/action";
 
 function Product({ products }) {
   const dispatch = useDispatch();

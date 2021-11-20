@@ -4,7 +4,7 @@ import { Form, Button } from "react-bootstrap";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
-import { addUser } from "./reducers/user/action";
+import { addUser } from "../reducers/user/action";
 
 function SignUp() {
   const navigate = useNavigate();

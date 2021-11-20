@@ -4,8 +4,8 @@ import { Form, Button, Navbar } from "react-bootstrap";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { ChangeLogged } from "./reducers/IsLogged/action";
-import { ChangeAdminState } from "../isAdmin/action";
+import { ChangeLogged } from "../reducers/IsLogged/action";
+import { ChangeAdminState } from "../reducers/isAdmin/action";
 
 function SignIn() {
   const navigate = useNavigate();

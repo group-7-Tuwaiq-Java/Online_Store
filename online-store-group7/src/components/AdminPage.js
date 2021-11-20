@@ -1,6 +1,6 @@
 import "../styleFiles/adminPage.css";
 import { useDispatch, useSelector } from "react-redux";
-import { DleteProduct } from "./reducers/products/action";
+import { DleteProduct } from "../reducers/products/action";
 
 function AdminPage() {
   const dispatch = useDispatch();

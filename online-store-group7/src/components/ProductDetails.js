@@ -1,8 +1,8 @@
 import productDetails from "../styleFiles/productDetails.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
-import { AddToWishList } from "./reducers/wishList/action";
-import { AddToCart } from "./reducers/cartReducer/action";
+import { AddToWishList } from "../reducers/wishList/action";
+import { AddToCart } from "../reducers/cartReducer/action";
 
 function ProductDetails() {
   const dispatch = useDispatch();

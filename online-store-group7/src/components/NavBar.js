@@ -3,8 +3,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { ChangeLogged } from "./reducers/IsLogged/action";
-import { SearchAction } from "./reducers/search/action";
+import { ChangeLogged } from "../reducers/IsLogged/action";
+import { SearchAction } from "../reducers/search/action";
 import cart from "../Images/cart.png";
 
 function NavBar() {

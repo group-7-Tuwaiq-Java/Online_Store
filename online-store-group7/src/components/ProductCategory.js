@@ -1,9 +1,9 @@
 import productCategory from "../styleFiles/productCategory.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
-import { AddToCart } from "./reducers/user/action";
+import { AddToCart } from "../reducers/user/action";
 import { Link } from "react-router-dom";
-import { AddToWishList } from "./reducers/wishList/action";
+import { AddToWishList } from "../reducers/wishList/action";
 
 function ProductCategory({ products }) {
   const dispatch = useDispatch();
