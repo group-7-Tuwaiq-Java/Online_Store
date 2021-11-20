@@ -1,20 +1,17 @@
-.AdminGrid{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    justify-content: center;
-    align-items: center;
-    justify-items: center;
-    align-content: center;
-    text-align: center;
-    /* margin: 1rem;
-    padding: 1rem; */
+.AdminGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  align-content: center;
+  text-align: center;
 }
 
-.gridCard{
-    margin: 1rem;
-    padding: 1rem;
-    background-color: gray;
-    width: 20rem;
-    height: 20rem;
+.gridCard {
+  margin: 1rem;
+  padding: 1rem;
+  background-color: gray;
+  width: 20rem;
+  height: 20rem;
 }
-

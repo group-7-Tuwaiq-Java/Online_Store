@@ -1,21 +1,14 @@
-const initialState ={
+const initialState = {
+  isAdmin: false,
+};
 
-    isAdmin:false
-    
-}
+const AdminReducer = (state = initialState, { type, payload }) => {
+  switch (type) {
+    case "CHANGE_ADMIN_STATE":
+      return { isAdmin: payload };
+    default:
+      return { state };
+  }
+};
 
-const AdminReducer = (state = initialState,{type,payload})=>{
-
-    switch (type){
-        case "CHANGE_ADMIN_STATE":
-            return{
-                isAdmin: payload
-            }
-            default: 
-            return{
-                state
-            }
-        }
-    }
-
-    export default AdminReducer
+export default AdminReducer;

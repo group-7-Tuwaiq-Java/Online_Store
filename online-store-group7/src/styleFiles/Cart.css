@@ -1,28 +1,28 @@
-.CartForm{
-    display: block;
-    justify-content: center;
-    justify-self: center;
-    align-items: center;
-    color: gray;
-    width: 400px;
+.CartForm {
+  display: block;
+  justify-content: center;
+  justify-self: center;
+  align-items: center;
+  color: gray;
+  width: 400px;
 }
-button{
-    width: 150px;
-    margin-top: 10px;
+button {
+  width: 150px;
+  margin-top: 10px;
 }
-.Cart{
-    display: flex;
-    flex-direction: row;
-    background-color: rgb(223, 224, 224);
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
+.Cart {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(223, 224, 224);
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
 }
-h2{
-   text-align: center; 
-   color:gray;
+h2 {
+  text-align: center;
+  color: gray;
 }
-p{
-    font-size: large;
+p {
+  font-size: large;
 }

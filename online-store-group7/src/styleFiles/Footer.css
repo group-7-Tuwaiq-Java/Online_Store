@@ -1,29 +1,28 @@
 footer {
-    text-align: center;
-    padding: 3px;
-    background-color:#333;
-    color: white;
-    position:absolute;
-    bottom:auto;
-    left:0;
-    right:0;
-    margin-top: 10%;
-    /* padding-top: 0%; */
-  }
-
-  .ppp{
-      text-align: left;
-      text-decoration: none;
-      color: white;
-  }
-  .ppp:hover{
-    color: black;
-  }
-  .ppp2{
-    text-align: right;
+  text-align: center;
+  padding: 3px;
+  background-color: #333;
+  color: white;
+  position: absolute;
+  bottom: auto;
+  left: 0;
+  right: 0;
+  margin-top: 10%;
 }
 
-.gridfooter{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.ppp {
+  text-align: left;
+  text-decoration: none;
+  color: white;
+}
+.ppp:hover {
+  color: black;
+}
+.ppp2 {
+  text-align: right;
+}
+
+.gridfooter {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
